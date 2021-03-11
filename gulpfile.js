@@ -1,4 +1,5 @@
 const gulp = require("gulp")
+const sass = require("gulp-sass")
 const esbuild = require("gulp-esbuild")
 const exec = require("child_process").exec
 
@@ -21,12 +22,24 @@ function bundle() {
     .pipe(gulp.dest("./dist/"))
 }
 
+function styles() {
+  return gulp
+    .src("./sass/**/*.scss")
+    .pipe(sass())
+    .pipe(gulp.dest("./dist/styles"))
+}
+
 function watch() {
   exec("reload -b --dir=dist --port=5000", (err, stdout) => {
     if (err) throw err
   })
+  gulp.watch("sass/**/*.scss", styles)
   return gulp.watch("src/**/*.ts", bundle)
 }
 
+const build = gulp.series(bundle, styles)
+
 exports.bundle = bundle
-exports.watch = gulp.series(bundle, watch)
+exports.styles = styles
+exports.build = build
+exports.watch = gulp.series(build, watch)

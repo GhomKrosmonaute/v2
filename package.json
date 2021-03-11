@@ -6,16 +6,18 @@
     "semi": false
   },
   "scripts": {
-    "bundle": "gulp bundle",
+    "build": "gulp build",
     "start": "gulp watch",
-    "format": "prettier --write src gulpfile.js dist/style.css dist/index.html"
+    "format": "prettier --write src sass gulpfile.js dist/index.html"
   },
   "devDependencies": {
+    "@types/gulp-sass": "^4.0.0",
     "@types/node": "^14.14.20",
     "esbuild": "^0.8.31",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-esbuild": "^0.3.14",
+    "gulp-sass": "^4.1.0",
     "prettier": "^2.2.1",
     "reload": "^3.1.1",
     "typescript": "^4.1.3"
