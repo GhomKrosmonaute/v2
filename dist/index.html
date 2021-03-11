@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" type="text/css" href="styles/index.css" />
     <link
       rel="shortcut icon"
@@ -11,11 +17,18 @@
     <title>ESBuild Template</title>
   </head>
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>-->
-    <script src="bundle.js"></script>
-    <script>
-      alert(app.hello())
-    </script>
+    <script defer src="bundle.js"></script>
+    <header>
+      <h1>Camille Abella</h1>
+      <blockquote>Développeur WEB</blockquote>
+      <div class="buttons">
+        <button class="button" type="button" onclick="app.theme.switchIt()">
+          <i class="fas fa-adjust"></i>
+        </button>
+        <a class="button" href="https://github.com/CamilleAbella" target="_blank">
+          <i class="fab fa-github-alt"></i>
+        </a>
+      </div>
+    </header>
   </body>
 </html>

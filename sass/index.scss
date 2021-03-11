@@ -1,9 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-body {
-  font-family: "Roboto", sans-serif;
+@import "reset";
+
+:root {
+  --background-color: #d7cfcf;
+  --text-color: #131313;
+  --text-secondary: #3b3b3b;
 }
 
-h1 {
-  text-align: center;
+.dark {
+  --background-color: #292929;
+  --text-color: #c1c1c1;
+  --text-secondary: #8c8c8c;
 }
+
+@import "components/button";
+@import "elements/header";
+@import "elements/body";
