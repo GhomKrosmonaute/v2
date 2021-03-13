@@ -1,6 +1,8 @@
 header {
   min-height: 30vh;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  background: linear-gradient(to bottom, var(--extrem-background-color-50), #00000000);
+  transition: background-color 200ms; }
   header h1 {
     padding-top: 60px;
     text-align: center;
