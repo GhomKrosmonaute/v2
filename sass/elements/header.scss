@@ -1,20 +1,70 @@
 header {
+  min-height: 30vh;
+  padding-bottom: 30px;
+  //background: linear-gradient(
+  //  to bottom,
+  //  var(--extrem-background-color-50),
+  //  var(--background-color)
+  //);
+  //transition: background-color 200ms;
+
   h1 {
+    padding-top: 60px;
     text-align: center;
+    font-size: 40px;
   }
+
   blockquote {
     text-align: center;
     color: var(--text-secondary);
+    font-size: 20px;
   }
-  .buttons {
-    padding: 15px;
-    position: fixed;
-    top: 0;
-    left: 0;
 
-    button {
-      font-size: 15px;
+  .buttons {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .button {
+      font-size: 25px;
       margin-right: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    h1 {
+      padding-top: 30px;
+      font-size: 50px;
+    }
+
+    blockquote {
+      font-size: 25px;
+    }
+
+    .buttons {
+      top: 15px;
+      left: 20px;
+      width: 50px;
+      transform: none;
+
+      .button {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1224px) {
+  header {
+    h1 {
+      font-size: 80px;
+    }
+
+    blockquote {
+      font-size: 35px;
     }
   }
 }

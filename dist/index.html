@@ -14,21 +14,39 @@
       href="https://esbuild.github.io/favicon.svg"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="bundle.css" />
+    <script defer src="bundle.js"></script>
     <title>ESBuild Template</title>
   </head>
   <body>
-    <script defer src="bundle.js"></script>
     <header>
       <h1>Camille Abella</h1>
       <blockquote>Développeur WEB</blockquote>
       <div class="buttons">
         <button class="button" type="button" onclick="app.theme.switchIt()">
-          <i class="fas fa-adjust"></i>
-        </button>
-        <a class="button" href="https://github.com/CamilleAbella" target="_blank">
-          <i class="fab fa-github-alt"></i>
-        </a>
+          <i class="fas fa-adjust"></i></button
+        ><a
+          class="button"
+          href="https://github.com/CamilleAbella"
+          target="_blank"
+          ><i class="fab fa-github-alt"></i></a
+        ><a
+          class="button"
+          href="https://www.linkedin.com/in/camille-abella-a99950176/"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
       </div>
     </header>
+    <main>
+      <div id="project-slider">
+        <div class="swiper-container">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
   </body>
 </html>

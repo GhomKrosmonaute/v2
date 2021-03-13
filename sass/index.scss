@@ -1,19 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-@import "reset";
-
 :root {
+  --extrem-background-color: #fff;
+  --extrem-background-color-50: #ffffff77;
   --background-color: #d7cfcf;
   --text-color: #131313;
   --text-secondary: #3b3b3b;
 }
 
 .dark {
+  --extrem-background-color: #000;
+  --extrem-background-color-50: #00000077;
   --background-color: #292929;
   --text-color: #c1c1c1;
   --text-secondary: #8c8c8c;
 }
 
+@import "reset";
 @import "components/button";
+@import "components/swiper";
 @import "elements/header";
 @import "elements/body";

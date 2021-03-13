@@ -1,0 +1,26 @@
+.swiper-container {
+  margin: auto;
+  width: 100%;
+  height: 50vw;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--text-secondary);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 1224px) {
+  .swiper-container {
+    width: 75vw;
+  }
+}
