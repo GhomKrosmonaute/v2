@@ -40,6 +40,14 @@ a {
     .swiper-container .swiper-button-prev:hover,
     .swiper-container .swiper-button-next:hover {
       color: var(--text-secondary); }
+  .swiper-container .swiper-image-container {
+    height: 100%;
+    width: 50%;
+    padding: 100px; }
+    .swiper-container .swiper-image-container img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain; }
 
 @media screen and (min-width: 768px) {
   .swiper-container {
@@ -97,3 +105,6 @@ body {
   color: var(--text-color);
   transition: background-color 200ms;
   min-height: 100vh; }
+
+.flex {
+  display: flex; }

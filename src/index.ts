@@ -12,9 +12,22 @@ const $wrapper = document.querySelector(".swiper-wrapper")
 
 data.projects.forEach((project) => {
   $wrapper.appendChild(
-    utils.createElementFromHTML(
-      `<div class="swiper-slide">${project.name}</div>`
-    )
+    utils.createElementFromHTML(`
+      <div class="swiper-slide flex">
+        <div class="swiper-image-container">
+          <img src="${project.image}" alt="${project.name} logo">
+        </div>
+        <div class="swiper-">
+          <h2>${project.name}</h2>
+          <p>${project.description}</p>
+          <ul>
+            ${project.technologies
+              .map((techno) => `<li>${techno}</li>`)
+              .join("")}
+          </ul>
+        </div>
+      </div>
+    `)
   )
 })
 
