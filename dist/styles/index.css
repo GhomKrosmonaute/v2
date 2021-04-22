@@ -22,6 +22,20 @@
 a {
   text-decoration: none; }
 
+#popupImage {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(134, 134, 134, 0.37);
+  transition: background-color 2s;
+  padding: 100px 0;
+  cursor: pointer; }
+  #popupImage img {
+    object-fit: contain; }
+
 .button {
   background-color: #00000000;
   color: var(--text-color);
@@ -40,6 +54,8 @@ a {
     .swiper-container .swiper-button-prev:hover,
     .swiper-container .swiper-button-next:hover {
       color: var(--text-secondary); }
+  .swiper-container .swiper-image-container img {
+    cursor: pointer; }
   .swiper-container .swiper-image-container,
   .swiper-container .swiper-description-container {
     height: 100%;
@@ -48,9 +64,12 @@ a {
   .swiper-container .swiper-description-container {
     display: flex;
     flex-direction: column; }
-    .swiper-container .swiper-description-container h2 {
-      font-size: 30px;
-      margin-bottom: 20px; }
+    .swiper-container .swiper-description-container .swiper-header {
+      display: flex;
+      justify-content: space-between; }
+      .swiper-container .swiper-description-container .swiper-header h2 {
+        font-size: 30px;
+        margin-bottom: 20px; }
     .swiper-container .swiper-description-container p {
       font-size: 18px;
       margin-bottom: 20px; }

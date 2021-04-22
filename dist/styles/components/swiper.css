@@ -8,6 +8,8 @@
     .swiper-container .swiper-button-prev:hover,
     .swiper-container .swiper-button-next:hover {
       color: var(--text-secondary); }
+  .swiper-container .swiper-image-container img {
+    cursor: pointer; }
   .swiper-container .swiper-image-container,
   .swiper-container .swiper-description-container {
     height: 100%;
@@ -16,9 +18,12 @@
   .swiper-container .swiper-description-container {
     display: flex;
     flex-direction: column; }
-    .swiper-container .swiper-description-container h2 {
-      font-size: 30px;
-      margin-bottom: 20px; }
+    .swiper-container .swiper-description-container .swiper-header {
+      display: flex;
+      justify-content: space-between; }
+      .swiper-container .swiper-description-container .swiper-header h2 {
+        font-size: 30px;
+        margin-bottom: 20px; }
     .swiper-container .swiper-description-container p {
       font-size: 18px;
       margin-bottom: 20px; }

@@ -39,7 +39,19 @@
       </div>
     </header>
     <main>
-      <div id="project-slider">
+      <div
+        id="project-slider"
+        style="
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -o-user-select: none;
+        "
+        unselectable="on"
+        onselectstart="return false;"
+        onmousedown="return false;"
+      >
         <div class="swiper-container">
           <div class="swiper-wrapper"></div>
           <div class="swiper-button-prev"></div>
@@ -48,5 +60,8 @@
       </div>
     </main>
     <footer></footer>
+    <div id="popupImage" onclick="app.popupImage('')" style="display: none">
+      <img src="" />
+    </div>
   </body>
 </html>

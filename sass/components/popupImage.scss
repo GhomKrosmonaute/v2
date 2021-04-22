@@ -1,0 +1,16 @@
+#popupImage {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(134, 134, 134, 0.37);
+  transition: background-color 2s;
+  padding: 100px 0;
+  cursor: pointer;
+
+  img {
+    object-fit: contain;
+  }
+}
