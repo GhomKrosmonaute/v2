@@ -17,8 +17,13 @@ data.projects.forEach((project) => {
         <div class="swiper-image-container">
           <img src="${project.image}" alt="${project.name} logo">
         </div>
-        <div class="swiper-">
-          <h2>${project.name}</h2>
+        <div class="swiper-description-container">
+          <h2>
+            <a href="${project.url}" target="_blank" class="button">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            ${project.name}
+          </h2>
           <p>${project.description}</p>
           <ul>
             ${project.technologies

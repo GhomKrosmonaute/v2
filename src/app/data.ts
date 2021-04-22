@@ -3,6 +3,7 @@ export interface Project {
   technologies: string[]
   image: string
   description: string
+  url: string
 }
 
 export const projects: Project[] = [
@@ -12,6 +13,7 @@ export const projects: Project[] = [
     image: "assets/images/projects/gario.png",
     description:
       "Petit test de platformer 2D avec moteur physique simple et système de checkpoint.",
+    url: "https://github.com/CamilleAbella/Gario",
   },
   {
     name: "Just a Forum",
@@ -19,5 +21,6 @@ export const projects: Project[] = [
     image: "assets/images/projects/jf.png",
     description:
       "Début de réseau social/forum à post récursif orienté développement (markdown interprété et syntaxe des blocs de code colorée).",
+    url: "https://github.com/CamilleAbella/just-a-forum",
   },
 ]

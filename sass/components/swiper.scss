@@ -12,15 +12,37 @@
     }
   }
 
-  .swiper-image-container {
+  .swiper-image-container,
+  .swiper-description-container {
     height: 100%;
     width: 50%;
-    padding: 100px;
+    padding: 10px;
+  }
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
+  .swiper-description-container {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+
+      li {
+        font-size: 16px;
+        margin-right: 20px;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -28,6 +50,11 @@
 @media screen and (min-width: 768px) {
   .swiper-container {
     height: 70vh;
+
+    .swiper-image-container,
+    .swiper-description-container {
+      padding: 50px;
+    }
   }
 }
 
