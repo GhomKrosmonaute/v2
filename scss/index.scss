@@ -1,0 +1,21 @@
+@import 'fonts';
+@import 'header';
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  &.light {
+    background-color: #fafafa;
+    color: #010101;
+  }
+
+  &.dark {
+    background-color: #010101;
+    color: #fafafa;
+  }
+}

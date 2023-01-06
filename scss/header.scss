@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(150, 150, 150, 30%);
+  height: 150px;
+
+  .side {
+    flex-basis: 100px;
+  }
+
+  #photo-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      object-fit: cover;
+      width: 100px;
+      height: 100px;
+      scale: 0.8;
+      border-radius: 50px;
+      margin-right: 10px;
+    }
+  }
+}
