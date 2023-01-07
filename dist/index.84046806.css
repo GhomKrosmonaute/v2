@@ -1,4 +1,25 @@
 @import "https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap";
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-family: Ubuntu, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body.light {
+  color: #010101;
+  background-color: #fafafa;
+}
+
+body.dark {
+  color: #fafafa;
+  background-color: #010101;
+}
+
 header {
   height: 150px;
   background-color: #9696964d;
@@ -7,7 +28,11 @@ header {
 }
 
 header .side {
+  background-color: #9696964d;
   flex-basis: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 header #photo-name {
@@ -25,21 +50,13 @@ header #photo-name img {
   scale: .8;
 }
 
-* {
-  border: none;
-  margin: 0;
-  padding: 0;
-  font-family: Ubuntu, sans-serif;
+header #theme-switch, header #menu-button {
+  width: 25px;
+  height: 25px;
 }
 
-body.light {
-  color: #010101;
-  background-color: #fafafa;
-}
-
-body.dark {
-  color: #fafafa;
-  background-color: #010101;
+.dark #theme-switch, .dark #menu-button {
+  fill: #fafafa;
 }
 
 /*# sourceMappingURL=index.84046806.css.map */

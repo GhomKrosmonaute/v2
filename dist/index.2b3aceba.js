@@ -532,12 +532,20 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"7QK8s":[function(require,module,exports) {
+var _theme = require("./theme");
+
+},{"./theme":"6sXR9"}],"6sXR9":[function(require,module,exports) {
 const themeSwitch = document.getElementById("theme-switch");
-themeSwitch.onclick = ()=>{
+// make listener
+const switchTheme = ()=>{
     document.body.classList.toggle("light");
     document.body.classList.toggle("dark");
-    themeSwitch.innerText = document.body.classList.toString();
+    localStorage.setItem("theme", document.body.classList.toString());
 };
+// add listener
+themeSwitch.onclick = switchTheme;
+// set theme on load
+if (localStorage.getItem("theme") === "dark") switchTheme();
 
 },{}]},["jCitu","7QK8s"], "7QK8s", "parcelRequire94c2")
 

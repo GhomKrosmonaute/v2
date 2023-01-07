@@ -1,6 +1,7 @@
 node_modules
 .idea
 .env
+.parcel-cache
 /package-lock.json
 /yarn.lock
 /yarn-error.log
