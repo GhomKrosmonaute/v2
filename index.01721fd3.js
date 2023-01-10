@@ -1,0 +1,2 @@
+const t=()=>{document.body.classList.toggle("light"),document.body.classList.toggle("dark"),localStorage.setItem("theme",document.body.classList.toString())};document.getElementById("right-button").onclick=t,"dark"===localStorage.getItem("theme")&&t();const e=document.getElementById("left-button"),o=()=>{document.querySelector("header").classList.toggle("opened"),console.log()};document.getElementById("middle-button").onclick=o,e.onclick=o;
+//# sourceMappingURL=index.01721fd3.js.map
