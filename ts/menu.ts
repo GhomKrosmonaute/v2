@@ -1,10 +1,12 @@
-const menuButton = document.getElementById("menu-button");
-const navSlide = document.getElementById("nav-slide");
+const rightButton = document.getElementById("left-button");
+const middleButton = document.getElementById("middle-button");
 
 // make listener
 const toggleMenu = () => {
-  navSlide.classList.toggle("opened");
+  document.querySelector("header").classList.toggle("opened");
+  console.log();
 };
 
 // add listener
-menuButton.onclick = toggleMenu;
+middleButton.onclick = toggleMenu;
+rightButton.onclick = toggleMenu;

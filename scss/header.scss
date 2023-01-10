@@ -1,50 +1,94 @@
 header {
   display: flex;
-  justify-content: space-between;
-  width: 100vw;
+  z-index: 2;
+  position: absolute;
+  left: -100vw;
+  top: 0;
+  width: 200vw;
   height: var(--header-height);
+  transition: left 0.5s ease-in-out;
+  background-color: rgba(150, 150, 150, 30%);
+  box-shadow: rgba(0, 0, 0, 50%) 0 0 30px;
 
-  .side {
-    flex-basis: 100px;
+  &.opened {
+    left: 0;
+  }
+
+  .header-button {
+    width: var(--header-button-width);
+    flex-basis: var(--header-button-width);
+    height: var(--header-height);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(150, 150, 150, 10%);
 
-    &:hover {
-      background-color: rgba(150, 150, 150, 30%);
-    }
-  }
-
-  #photo-name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      object-fit: cover;
-      width: 100px;
-      height: 100px;
-      scale: 0.8;
-      border-radius: 50px;
-      margin-right: 10px;
-    }
-
-    h1 {
-      font-size: 40px;
-    }
-
-    p {
-      font-size: 20px;
-    }
-  }
-
-  #theme-switch,
-  #menu-button {
     svg {
       width: 25px;
       height: 25px;
       fill: var(--color);
     }
+  }
+
+  #nav-side {
+    display: flex;
+    width: 100vw;
+    height: var(--header-height);
+
+    nav {
+      flex-grow: 1;
+      display: flex;
+
+      ul {
+        flex-grow: 1;
+        display: flex;
+        justify-content: stretch;
+
+        li {
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  #middle-button {
+  }
+
+  #main-side {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: var(--header-height);
+
+    #photo-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        object-fit: cover;
+        width: 100px;
+        height: 100px;
+        scale: 0.8;
+        border-radius: 50px;
+        margin-right: 10px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.dark {
+  header {
+    box-shadow: rgba(255, 255, 255, 20%) 0 0 30px;
   }
 }

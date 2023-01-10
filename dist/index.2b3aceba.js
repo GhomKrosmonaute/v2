@@ -536,7 +536,7 @@ var _theme = require("./theme");
 var _menu = require("./menu");
 
 },{"./theme":"6sXR9","./menu":"eNWMI"}],"6sXR9":[function(require,module,exports) {
-const themeSwitch = document.getElementById("theme-switch");
+const themeSwitch = document.getElementById("right-button");
 // make listener
 const switchTheme = ()=>{
     document.body.classList.toggle("light");
@@ -549,14 +549,16 @@ themeSwitch.onclick = switchTheme;
 if (localStorage.getItem("theme") === "dark") switchTheme();
 
 },{}],"eNWMI":[function(require,module,exports) {
-const menuButton = document.getElementById("menu-button");
-const navSlide = document.getElementById("nav-slide");
+const rightButton = document.getElementById("left-button");
+const middleButton = document.getElementById("middle-button");
 // make listener
 const toggleMenu = ()=>{
-    navSlide.classList.toggle("opened");
+    document.querySelector("header").classList.toggle("opened");
+    console.log();
 };
 // add listener
-menuButton.onclick = toggleMenu;
+middleButton.onclick = toggleMenu;
+rightButton.onclick = toggleMenu;
 
 },{}]},["jCitu","7QK8s"], "7QK8s", "parcelRequire94c2")
 

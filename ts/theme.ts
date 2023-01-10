@@ -1,4 +1,4 @@
-const themeSwitch = document.getElementById("theme-switch");
+const themeSwitch = document.getElementById("right-button");
 
 // make listener
 const switchTheme = () => {

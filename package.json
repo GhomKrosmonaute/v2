@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel index.html --no-cache",
     "build": "parcel build index.html",
-    "format": "prettier --write {ts,scss}/*.{js,jsx,ts,tsx,json,css,scss,md,html} index.html"
+    "format": "prettier --write {ts,scss}/*.{js,jsx,ts,tsx,json,css,scss,md,html} index.html",
+    "clean": "npx del-cli dist .parcel-cache -y"
   },
   "dependencies": {
     "parcel": "^2.8.2"
