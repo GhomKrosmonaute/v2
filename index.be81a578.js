@@ -1,0 +1,2 @@
+const t=()=>{document.body.classList.toggle("light"),document.body.classList.toggle("dark"),localStorage.setItem("theme",document.body.classList.toString())};document.getElementById("right-button").onclick=t,"dark"===localStorage.getItem("theme")&&t();const e=document.getElementById("left-button"),o=document.getElementById("middle-button"),c=document.querySelector("header"),n=()=>{c.classList.add("transition"),c.classList.toggle("opened"),setTimeout((()=>{c.classList.remove("transition")}),500)};o.onclick=n,e.onclick=n;
+//# sourceMappingURL=index.be81a578.js.map
