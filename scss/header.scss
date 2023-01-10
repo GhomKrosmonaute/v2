@@ -6,9 +6,12 @@ header {
   top: 0;
   width: 200vw;
   height: var(--header-height);
-  transition: left 0.5s ease-in-out;
   background-color: rgba(150, 150, 150, 30%);
   box-shadow: rgba(0, 0, 0, 50%) 0 0 30px;
+
+  &.transition {
+    transition: left 0.5s ease-in-out;
+  }
 
   &.opened {
     left: 0;
@@ -41,13 +44,21 @@ header {
       ul {
         flex-grow: 1;
         display: flex;
-        justify-content: stretch;
 
-        li {
+        a {
           flex-grow: 1;
           display: flex;
           justify-content: center;
           align-items: center;
+          font-size: 30px;
+
+          &:nth-child(odd) {
+            background-color: rgba(150, 150, 150, 0%);
+
+            &:hover {
+              background-color: rgba(150, 150, 150, 30%);
+            }
+          }
         }
       }
     }

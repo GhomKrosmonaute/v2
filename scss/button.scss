@@ -1,5 +1,6 @@
 .button {
   background-color: rgba(150, 150, 150, 10%);
+  transition: background-color 0.1s ease-in-out;
 
   &:hover {
     background-color: rgba(150, 150, 150, 30%);
