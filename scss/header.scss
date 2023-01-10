@@ -1,15 +1,19 @@
 header {
   display: flex;
   justify-content: space-between;
-  background-color: rgba(150, 150, 150, 30%);
-  height: 150px;
+  width: 100vw;
+  height: var(--header-height);
 
   .side {
     flex-basis: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(150, 150, 150, 30%);
+    background-color: rgba(150, 150, 150, 10%);
+
+    &:hover {
+      background-color: rgba(150, 150, 150, 30%);
+    }
   }
 
   #photo-name {
@@ -27,19 +31,20 @@ header {
     }
 
     h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 20px;
     }
   }
 
   #theme-switch,
   #menu-button {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-.dark {
-  #theme-switch,
-  #menu-button {
-    fill: #fafafa;
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: var(--color);
+    }
   }
 }

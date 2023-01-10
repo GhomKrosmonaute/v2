@@ -5,16 +5,29 @@
   font-family: "Ubuntu", sans-serif;
 }
 
+ul,
+ol,
+li {
+  list-style: none;
+}
+
 body {
+  --header-height: 150px;
+  --background-color: #fafafa;
+  --color: #010101;
+
   min-height: 100vh;
 
   &.light {
-    background-color: #fafafa;
-    color: #010101;
+    --background-color: #fafafa;
+    --color: #010101;
   }
 
   &.dark {
-    background-color: #010101;
-    color: #fafafa;
+    --background-color: #010101;
+    --color: #fafafa;
   }
+
+  background-color: var(--background-color);
+  color: var(--color);
 }

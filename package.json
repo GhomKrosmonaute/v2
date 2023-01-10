@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "format": "prettier --write {ts,scss}/*.{js,jsx,ts,tsx,json,css,scss,md,html} index.html"
   },
   "dependencies": {
     "parcel": "^2.8.2"

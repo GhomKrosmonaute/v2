@@ -533,8 +533,9 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"7QK8s":[function(require,module,exports) {
 var _theme = require("./theme");
+var _menu = require("./menu");
 
-},{"./theme":"6sXR9"}],"6sXR9":[function(require,module,exports) {
+},{"./theme":"6sXR9","./menu":"eNWMI"}],"6sXR9":[function(require,module,exports) {
 const themeSwitch = document.getElementById("theme-switch");
 // make listener
 const switchTheme = ()=>{
@@ -546,6 +547,16 @@ const switchTheme = ()=>{
 themeSwitch.onclick = switchTheme;
 // set theme on load
 if (localStorage.getItem("theme") === "dark") switchTheme();
+
+},{}],"eNWMI":[function(require,module,exports) {
+const menuButton = document.getElementById("menu-button");
+const navSlide = document.getElementById("nav-slide");
+// make listener
+const toggleMenu = ()=>{
+    navSlide.classList.toggle("opened");
+};
+// add listener
+menuButton.onclick = toggleMenu;
 
 },{}]},["jCitu","7QK8s"], "7QK8s", "parcelRequire94c2")
 
