@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "parcel index.html --no-cache",
-    "build": "parcel build index.html --public-url  ./dist",
+    "start": "parcel index.html --no-cache --dist-dir dist",
+    "build": "parcel build index.html --public-url .",
     "format": "prettier --write {ts,scss}/*.{js,jsx,ts,tsx,json,css,scss,md,html} index.html",
     "clean": "npx del-cli dist .parcel-cache -y"
   },
