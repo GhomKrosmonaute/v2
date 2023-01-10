@@ -18,6 +18,7 @@ body {
   min-height: 100vh;
   background-color: var(--background-color);
   color: var(--color);
+  overflow-x: hidden;
 }
 
 body.light {
@@ -118,6 +119,46 @@ header #main-side #photo-name p {
 
 .dark header {
   box-shadow: 0 0 30px #fff3;
+}
+
+#main {
+  top: var(--header-height);
+  min-height: calc(100% - var(--header-height));
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+  left: 0;
+}
+
+#main main {
+  flex-grow: 1;
+  padding: 40px;
+}
+
+#main main h2 {
+  padding: 15px;
+  font-size: 25px;
+}
+
+#main main p {
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.button {
+  background-color: #9696961a;
+}
+
+.button:hover {
+  background-color: #9696964d;
+}
+
+footer {
+  height: var(--header-height);
+  z-index: 2;
+  width: 100vw;
+  background-color: #9696964d;
+  box-shadow: 0 0 30px #00000080;
 }
 
 /*# sourceMappingURL=index.84046806.css.map */

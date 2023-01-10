@@ -18,6 +18,7 @@ body {
   --color: #010101;
 
   min-height: 100vh;
+  overflow-x: hidden;
 
   &.light {
     --background-color: #fafafa;
