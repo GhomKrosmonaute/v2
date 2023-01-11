@@ -1,27 +1,44 @@
 import * as qs from "qs";
 
-import Projects from "./pages/Projects";
-import Career from "./pages/Career";
-import Skills from "./pages/Skills";
-import Contact from "./pages/Contact";
+import projects from "./pages/Projects";
+import career from "./pages/Career";
+import skills from "./pages/Skills";
+import contact from "./pages/Contact";
 
 const content = document.getElementById("content");
 const links = document.querySelectorAll("nav ul li");
+
 const parsed = qs.parse(location.search.substring(1));
 
-console.log(parsed);
+const showPage = (pageName: string) => {
+  const page = {
+    projects,
+    career,
+    skills,
+    contact,
+  }[pageName];
 
-function showPage(pageNumber: number) {
-  const page = [Projects, Career, Skills, Contact][pageNumber];
-  content.innerHTML = `<h2> ${page.title} </h2>`;
-}
+  content.innerHTML = `
+    <h2> ${page.title} </h2>
+  `;
+};
 
-if (typeof parsed.page === "number") showPage(parsed.page);
+if (typeof parsed.page === "string" && parsed.page.length > 0)
+  showPage(parsed.page);
 
-for (let i = 0; i < links.length; i++) {
-  const link = links[i];
+links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    showPage(i);
+
+    showPage(link.id);
+
+    history.pushState(
+      null,
+      "",
+      qs.stringify({
+        nav: 1,
+        page: link.id,
+      })
+    );
   });
-}
+});
