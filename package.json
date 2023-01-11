@@ -8,9 +8,11 @@
   },
   "dependencies": {
     "gh-pages": "^4.0.0",
-    "parcel": "^2.8.2"
+    "parcel": "^2.8.2",
+    "qs": "^6.11.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.2"
+    "@parcel/transformer-sass": "^2.8.2",
+    "@types/qs": "^6.9.7"
   }
 }
