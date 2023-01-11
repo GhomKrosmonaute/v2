@@ -4,7 +4,7 @@
     "build": "npm run clean && parcel build index.html --public-url \"https://ghomkrosmonaute.github.io\"",
     "format": "prettier --write {ts,scss}/*.{js,jsx,ts,tsx,json,css,scss,md,html} index.html",
     "clean": "npx del-cli dist .parcel-cache -y",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "gh-pages": "^4.0.0",
