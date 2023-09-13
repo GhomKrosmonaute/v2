@@ -20,6 +20,12 @@ const showPage = (pageName: string) => {
 
   content.innerHTML = `
     <h2> ${page.title} </h2>
+    <ul class="tags">
+      ${page.tags.map((tag) => `<li>${tag}</li>`).join("")}
+    </ul>
+    <content>
+      ${page.body}
+    </content>
   `;
 };
 
