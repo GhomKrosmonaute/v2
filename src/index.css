@@ -51,8 +51,12 @@
   }
 }
 
+#root {
+  cursor: none !important;
+}
+
 body {
-  --brightIntensity: 0
+  --brightIntensity: 0;
 }
 
 canvas {
