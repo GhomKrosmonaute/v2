@@ -1,8 +1,7 @@
 const brightLights = []
 const cursorTail = []
-
+const cursorTailLength = 20
 let globalAlpha = 3
-
 let primary = null
 
 function easeInOutCubic(t) {
@@ -85,5 +84,32 @@ function draw() {
     light.draw()
   }
 
-  document.body.style.setProperty("--brightIntensity", `${random(1, 50)}vw`)
+  cursorTail.unshift({ x: mouseX, y: mouseY })
+
+  if (cursorTail.length > cursorTailLength) {
+    cursorTail.pop()
+  }
+
+  for (let i = 0; i < cursorTail.length; i++) {
+    stroke(
+      red(primary),
+      green(primary),
+      blue(primary),
+      255 * (1 - easeInOutCubic(i / cursorTailLength))
+    )
+    strokeWeight(10 * (1 - easeInOutCubic(i / cursorTailLength)))
+    line(
+      cursorTail[i].x,
+      cursorTail[i].y,
+      cursorTail[i + 1]?.x,
+      cursorTail[i + 1]?.y
+    )
+  }
+
+  fill(255)
+  noStroke()
+  circle(mouseX, mouseY, 10)
+
+  if (frameCount % 5 === 0)
+    document.body.style.setProperty("--brightIntensity", `${random(1, 50)}vw`)
 }
