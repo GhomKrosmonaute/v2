@@ -192,8 +192,8 @@ function draw() {
 
     document.body.style.setProperty("--brightIntensity", `${intensity}px`)
 
-    if (intensity < 35) {
-      for (let i = 0; i < 2; i++) launchThunders()
+    if (intensity < 50) {
+      for (let i = 0; i < (intensity / 50) * 5; i++) launchThunders()
     }
   }
 }
