@@ -44,7 +44,8 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "prettier": {
-    "semi": false
+    "semi": false,
+    "trailingComma": "es5"
   },
   "eslintConfig": {
     "extends": [
