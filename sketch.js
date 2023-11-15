@@ -3,7 +3,7 @@ const cursorTail = []
 const cursorTailLength = 20
 let globalAlpha = 3
 let intensity = 60
-let primary = null
+let primary = color(124, 58, 237)
 let iBounds = null
 let h1Bounds = null
 
@@ -101,8 +101,6 @@ function thunder(fromX, fromY, toX, toY) {
 }
 
 function setup() {
-  primary = color(124, 58, 237)
-
   createCanvas(
     windowWidth,
     windowHeight,
