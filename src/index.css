@@ -68,13 +68,13 @@ canvas {
 
 h1 {
   font-family: 'Anton', sans-serif;
-  text-shadow: rgb(124,58,237) 0 0 var(--brightIntensity);
+  text-shadow: rgb(124,58,237) 0 0 var(--brightIntensity), rgb(124,58,237) 0 0 calc(var(--brightIntensity) * 5), rgb(124,58,237) 0 0 200px;
 }
 
 #i.bright {
   text-shadow:
-    rgb(124,58,237) 0 calc(var(--brightIntensity) * -0.01) calc(var(--brightIntensity) * 0.1),
-    rgb(124,58,237) 0 calc(var(--brightIntensity) * 0.01) calc(var(--brightIntensity) * 0.1);
+    rgb(124,58,237) 0 calc(var(--brightIntensity) * -1) calc(var(--brightIntensity) * 1),
+    rgb(124,58,237) 0 calc(var(--brightIntensity) * 1) calc(var(--brightIntensity) * 1);
 }
 
 
