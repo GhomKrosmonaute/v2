@@ -154,12 +154,20 @@ function draw() {
     )
   }
 
-  if (mouseIsPressed) {
-    stroke(primary)
+  const i = document.getElementById("i")
+  const iBounds = i.getBoundingClientRect()
 
-    const i = document.getElementById("i")
-    const iBounds = i.getBoundingClientRect()
-    thunder(iBounds.left + iBounds.width / 2, iBounds.top - 15, mouseX, mouseY)
+  if (mouseIsPressed && (mouseY > iBounds.bottom || mouseY < iBounds.top)) {
+    stroke(primary)
+    if (mouseY < iBounds.top)
+      thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, mouseX, mouseY)
+    else
+      thunder(
+        iBounds.left + iBounds.width / 2,
+        iBounds.bottom - 5,
+        mouseX,
+        mouseY
+      )
   }
 
   fill(255)
@@ -167,12 +175,22 @@ function draw() {
   circle(mouseX, mouseY, 30)
 
   if (frameCount % 5 === 0) {
-    const intensity = random(1, 100)
+    const intensity = random(1, 50)
 
     document.body.style.setProperty("--brightIntensity", `${intensity}vw`)
 
-    if (intensity > 50) {
+    if (intensity > 25) {
       for (let i = 0; i < 2; i++) launchThunders()
     }
   }
+}
+
+function mousePressed() {
+  const i = document.getElementById("i")
+  i.classList.add("bright")
+}
+
+function mouseReleased() {
+  const i = document.getElementById("i")
+  i.classList.remove("bright")
 }

@@ -71,4 +71,10 @@ h1 {
   text-shadow: rgb(124,58,237) 0 0 var(--brightIntensity);
 }
 
+#i.bright {
+  text-shadow:
+    rgb(124,58,237) 0 calc(var(--brightIntensity) * -0.01) calc(var(--brightIntensity) * 0.1),
+    rgb(124,58,237) 0 calc(var(--brightIntensity) * 0.01) calc(var(--brightIntensity) * 0.1);
+}
+
 
