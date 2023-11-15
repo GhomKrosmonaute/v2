@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
-import Avatar from "./app/Avatar";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import Avatar from "./app/Avatar"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export default function App() {
   return (
@@ -11,5 +11,5 @@ export default function App() {
       <Button>Test</Button>
       <Input />
     </div>
-  );
+  )
 }
