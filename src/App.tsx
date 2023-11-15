@@ -1,11 +1,7 @@
 import React from "react"
 
-import Avatar from "@/app/Avatar"
 import ThemeProvider from "@/app/ThemeProvider"
 import ThemeToggle from "@/app/ThemeToggle"
-
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 export default function App() {
   return (
@@ -15,10 +11,12 @@ export default function App() {
       enableSystem
       disableTransitionOnChange
     >
-      <Avatar />
-      <Button>Test</Button>
-      <Input />
-      <ThemeToggle />
+      <div className="fixed right-5 top-5 z-10">
+        <ThemeToggle />
+      </div>
+      <h1 className="pointer-events-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-9xl whitespace-nowrap z-10">
+        CAMILLE ABELLA
+      </h1>
     </ThemeProvider>
   )
 }

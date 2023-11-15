@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&family=Anton&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,3 +50,21 @@
     --ring: 263.4 70% 50.4%;
   }
 }
+
+body {
+  --brightIntensity: 0
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  text-shadow: rgb(124,58,237) 0 0 var(--brightIntensity);
+}
+
+
