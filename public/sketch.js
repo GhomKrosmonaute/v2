@@ -159,15 +159,28 @@ function draw() {
 
   if (mouseIsPressed && (mouseY > iBounds.bottom || mouseY < iBounds.top)) {
     stroke(primary)
-    if (mouseY < iBounds.top)
+    if (mouseY < iBounds.top) {
       thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, mouseX, mouseY)
-    else
+      thunder(
+        iBounds.left + iBounds.width / 2,
+        iBounds.bottom - 5,
+        random(width),
+        height
+      )
+    } else {
       thunder(
         iBounds.left + iBounds.width / 2,
         iBounds.bottom - 5,
         mouseX,
         mouseY
       )
+      thunder(
+        iBounds.left + iBounds.width / 2,
+        iBounds.top + 5,
+        random(width),
+        0
+      )
+    }
   }
 
   fill(255)
