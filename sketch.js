@@ -175,11 +175,11 @@ function draw() {
   circle(mouseX, mouseY, 30)
 
   if (frameCount % 5 === 0) {
-    const intensity = random(1, 50)
+    const intensity = random(10, 70)
 
-    document.body.style.setProperty("--brightIntensity", `${intensity}vw`)
+    document.body.style.setProperty("--brightIntensity", `${intensity}px`)
 
-    if (intensity > 25) {
+    if (intensity < 35) {
       for (let i = 0; i < 2; i++) launchThunders()
     }
   }
