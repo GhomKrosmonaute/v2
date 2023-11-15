@@ -45,6 +45,54 @@ function launchBrightLights() {
   setTimeout(launchBrightLights, random(100, 500))
 }
 
+function launchThunders() {
+  const h1 = document.getElementsByTagName("h1")[0]
+  const h1Bounds = h1.getBoundingClientRect()
+
+  stroke(primary)
+
+  thunder(
+    0,
+    random(height),
+    h1Bounds.left,
+    h1Bounds.top + h1Bounds.height / 2,
+    5
+  )
+  thunder(
+    h1Bounds.right,
+    h1Bounds.top + h1Bounds.height / 2,
+    width,
+    random(height),
+    5
+  )
+}
+
+function thunder(fromX, fromY, toX, toY) {
+  const points = [{ x: fromX, y: fromY }]
+  const shift = 50
+  const segmentCount = dist(fromX, fromY, toX, toY) / 70
+
+  for (let i = 1; i < segmentCount - 1; i++) {
+    const x = lerp(fromX, toX, i / segmentCount)
+    const y = lerp(fromY, toY, i / segmentCount)
+
+    points.push({
+      x: x + random(-shift, shift),
+      y: y + random(-shift, shift),
+    })
+  }
+
+  points.push({ x: toX, y: toY })
+
+  for (let i = 0; i < points.length - 1; i++) {
+    const p1 = points[i]
+    const p2 = points[i + 1]
+
+    strokeWeight(random(3, 10))
+    line(p1.x, p1.y, p2.x, p2.y)
+  }
+}
+
 function setup() {
   primary = color(124, 58, 237)
 
@@ -90,14 +138,14 @@ function draw() {
     cursorTail.pop()
   }
 
-  for (let i = 0; i < cursorTail.length; i++) {
+  for (let i = 0; i < cursorTail.length - 1; i++) {
     stroke(
       red(primary),
       green(primary),
       blue(primary),
-      255 * (1 - easeInOutCubic(i / cursorTailLength))
+      255 // * (1 - easeInOutCubic(i / cursorTailLength))
     )
-    strokeWeight(10 * (1 - easeInOutCubic(i / cursorTailLength)))
+    strokeWeight(30 * (1 - easeInOutCubic(i / cursorTailLength)))
     line(
       cursorTail[i].x,
       cursorTail[i].y,
@@ -106,10 +154,25 @@ function draw() {
     )
   }
 
+  if (mouseIsPressed) {
+    stroke(primary)
+
+    const i = document.getElementById("i")
+    const iBounds = i.getBoundingClientRect()
+    thunder(iBounds.left + iBounds.width / 2, iBounds.top - 15, mouseX, mouseY)
+  }
+
   fill(255)
   noStroke()
-  circle(mouseX, mouseY, 10)
+  circle(mouseX, mouseY, 30)
 
-  if (frameCount % 5 === 0)
-    document.body.style.setProperty("--brightIntensity", `${random(1, 50)}vw`)
+  if (frameCount % 5 === 0) {
+    const intensity = random(1, 100)
+
+    document.body.style.setProperty("--brightIntensity", `${intensity}vw`)
+
+    if (intensity > 50) {
+      for (let i = 0; i < 2; i++) launchThunders()
+    }
+  }
 }

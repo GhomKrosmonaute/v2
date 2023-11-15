@@ -15,7 +15,11 @@ export default function App() {
         <ThemeToggle />
       </div>
       <h1 className="pointer-events-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-9xl whitespace-nowrap z-10">
-        CAMILLE ABELLA
+        CAM
+        <span id="i" className="inline-block">
+          I
+        </span>
+        LLE ABELLA
       </h1>
     </ThemeProvider>
   )
