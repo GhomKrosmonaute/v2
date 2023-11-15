@@ -2,7 +2,17 @@ const brightLights = []
 const cursorTail = []
 const cursorTailLength = 20
 let globalAlpha = 3
+let intensity = 60
 let primary = null
+let iBounds = null
+let h1Bounds = null
+
+function fetchBounds() {
+  const i = document.getElementById("i")
+  const h1 = document.getElementsByTagName("h1")[0]
+  iBounds = i.getBoundingClientRect()
+  h1Bounds = h1.getBoundingClientRect()
+}
 
 function easeInOutCubic(t) {
   return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
@@ -46,9 +56,6 @@ function launchBrightLights() {
 }
 
 function launchThunders() {
-  const h1 = document.getElementsByTagName("h1")[0]
-  const h1Bounds = h1.getBoundingClientRect()
-
   stroke(primary)
 
   thunder(
@@ -103,6 +110,8 @@ function setup() {
     document.getElementById("canvas")
   )
 
+  fetchBounds()
+
   noStroke()
   noSmooth()
 
@@ -113,6 +122,8 @@ function setup() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight)
+
+  fetchBounds()
 }
 
 function draw() {
@@ -120,7 +131,6 @@ function draw() {
   background(0, 0, 0, 0)
   fill(255)
   noStroke()
-  noSmooth()
 
   if (globalAlpha > 0 && !mouseIsPressed) {
     globalAlpha -= 0.01
@@ -154,48 +164,96 @@ function draw() {
     )
   }
 
-  const i = document.getElementById("i")
-  const iBounds = i.getBoundingClientRect()
-
-  if (mouseIsPressed && (mouseY > iBounds.bottom || mouseY < iBounds.top)) {
+  if (mouseIsPressed) {
     stroke(primary)
     if (mouseY < iBounds.top) {
       thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, mouseX, mouseY)
+      thunder(mouseX, mouseY, random(width), 0)
       thunder(
         iBounds.left + iBounds.width / 2,
         iBounds.bottom - 5,
         random(width),
         height
       )
-    } else {
+    } else if (mouseY > iBounds.bottom) {
       thunder(
         iBounds.left + iBounds.width / 2,
         iBounds.bottom - 5,
         mouseX,
         mouseY
       )
+      thunder(mouseX, mouseY, random(width), height)
       thunder(
         iBounds.left + iBounds.width / 2,
         iBounds.top + 5,
         random(width),
         0
       )
+    } else {
+      thunder(
+        iBounds.left + iBounds.width / 2,
+        iBounds.top + 5,
+        random(width),
+        0
+      )
+      thunder(
+        iBounds.left + iBounds.width / 2,
+        iBounds.bottom - 5,
+        random(width),
+        height
+      )
+    }
+  }
+
+  if (frameCount % 5 === 0) {
+    intensity = int(random(10, 70))
+
+    document.body.style.setProperty("--brightIntensity", `${intensity}px`)
+  }
+
+  if (intensity < 30) {
+    for (let i = 0; i < (intensity / 50) * 2; i++) launchThunders()
+
+    if (!mouseIsPressed) {
+      if (mouseY < iBounds.top) {
+        thunder(
+          random(h1Bounds.left, h1Bounds.right),
+          h1Bounds.top,
+          mouseX,
+          mouseY
+        )
+        thunder(mouseX, mouseY, random(width), 0)
+      } else {
+        thunder(
+          random(h1Bounds.left, h1Bounds.right),
+          h1Bounds.top,
+          random(width),
+          0
+        )
+      }
+
+      if (mouseY > iBounds.bottom) {
+        thunder(
+          random(h1Bounds.left, h1Bounds.right),
+          h1Bounds.bottom,
+          mouseX,
+          mouseY
+        )
+        thunder(mouseX, mouseY, random(width), height)
+      } else {
+        thunder(
+          random(h1Bounds.left, h1Bounds.right),
+          h1Bounds.bottom,
+          random(width),
+          height
+        )
+      }
     }
   }
 
   fill(255)
   noStroke()
   circle(mouseX, mouseY, 30)
-
-  if (frameCount % 5 === 0) {
-    const intensity = random(10, 70)
-
-    document.body.style.setProperty("--brightIntensity", `${intensity}px`)
-
-    if (intensity < 50) {
-      for (let i = 0; i < (intensity / 50) * 5; i++) launchThunders()
-    }
-  }
 }
 
 function mousePressed() {
