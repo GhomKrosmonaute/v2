@@ -1,6 +1,7 @@
 const brightLights = []
 const cursorTail = []
 const cursorTailLength = 20
+const cursorSize = 10
 let globalAlpha = 3
 let intensity = 60
 let primary = null
@@ -77,7 +78,7 @@ function launchThunders() {
 function thunder(fromX, fromY, toX, toY) {
   const points = [{ x: fromX, y: fromY }]
   const shift = 50
-  const segmentCount = dist(fromX, fromY, toX, toY) / 70
+  const segmentCount = dist(fromX, fromY, toX, toY) / 60
 
   for (let i = 1; i < segmentCount - 1; i++) {
     const x = lerp(fromX, toX, i / segmentCount)
@@ -95,7 +96,7 @@ function thunder(fromX, fromY, toX, toY) {
     const p1 = points[i]
     const p2 = points[i + 1]
 
-    strokeWeight(random(3, 10))
+    strokeWeight(random(1, 9))
     line(p1.x, p1.y, p2.x, p2.y)
   }
 }
@@ -112,6 +113,7 @@ function setup() {
 
   fetchBounds()
 
+  frameRate(60)
   noStroke()
   noSmooth()
 
@@ -122,15 +124,17 @@ function setup() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight)
-
-  fetchBounds()
 }
 
 function draw() {
+  fetchBounds()
   translate(-width / 2, -height / 2)
   background(0, 0, 0, 0)
   fill(255)
   noStroke()
+
+  const mouseInCanvas =
+    mouseX > 50 && mouseX < width - 50 && mouseY > 50 && mouseY < height - 50
 
   if (globalAlpha > 0 && !mouseIsPressed) {
     globalAlpha -= 0.01
@@ -140,28 +144,6 @@ function draw() {
 
   for (const light of brightLights) {
     light.draw()
-  }
-
-  cursorTail.unshift({ x: mouseX, y: mouseY })
-
-  if (cursorTail.length > cursorTailLength) {
-    cursorTail.pop()
-  }
-
-  for (let i = 0; i < cursorTail.length - 1; i++) {
-    stroke(
-      red(primary),
-      green(primary),
-      blue(primary),
-      255 // * (1 - easeInOutCubic(i / cursorTailLength))
-    )
-    strokeWeight(30 * (1 - easeInOutCubic(i / cursorTailLength)))
-    line(
-      cursorTail[i].x,
-      cursorTail[i].y,
-      cursorTail[i + 1]?.x,
-      cursorTail[i + 1]?.y
-    )
   }
 
   if (mouseIsPressed) {
@@ -211,11 +193,11 @@ function draw() {
     document.body.style.setProperty("--brightIntensity", `${intensity}px`)
   }
 
-  if (intensity < 30) {
+  if (intensity < 20) {
     for (let i = 0; i < (intensity / 50) * 2; i++) launchThunders()
 
     if (!mouseIsPressed) {
-      if (mouseY < iBounds.top) {
+      if (mouseY < iBounds.top && mouseInCanvas) {
         thunder(
           random(h1Bounds.left, h1Bounds.right),
           h1Bounds.top,
@@ -232,7 +214,7 @@ function draw() {
         )
       }
 
-      if (mouseY > iBounds.bottom) {
+      if (mouseY > iBounds.bottom && mouseInCanvas) {
         thunder(
           random(h1Bounds.left, h1Bounds.right),
           h1Bounds.bottom,
@@ -251,9 +233,33 @@ function draw() {
     }
   }
 
-  fill(255)
-  noStroke()
-  circle(mouseX, mouseY, 30)
+  if (mouseInCanvas) {
+    cursorTail.unshift({ x: mouseX, y: mouseY })
+
+    if (cursorTail.length > cursorTailLength) {
+      cursorTail.pop()
+    }
+
+    for (let i = 0; i < cursorTail.length - 1; i++) {
+      stroke(
+        red(primary),
+        green(primary),
+        blue(primary),
+        255 // * (1 - easeInOutCubic(i / cursorTailLength))
+      )
+      strokeWeight(cursorSize * (1 - easeInOutCubic(i / cursorTailLength)))
+      line(
+        cursorTail[i].x,
+        cursorTail[i].y,
+        cursorTail[i + 1]?.x,
+        cursorTail[i + 1]?.y
+      )
+    }
+
+    fill(255)
+    noStroke()
+    circle(mouseX, mouseY, cursorSize)
+  }
 }
 
 function mousePressed() {

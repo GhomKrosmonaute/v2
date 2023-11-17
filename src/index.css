@@ -52,7 +52,7 @@
 }
 
 #root {
-  cursor: none !important;
+  /*cursor: none;*/
 }
 
 body {
@@ -75,6 +75,32 @@ h1 {
   text-shadow:
     rgb(124,58,237) 0 calc(var(--brightIntensity) * -1) calc(var(--brightIntensity) * 1),
     rgb(124,58,237) 0 calc(var(--brightIntensity) * 1) calc(var(--brightIntensity) * 1);
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide {
+  0% {
+    top: 50vh;
+    font-size: 20vh;
+  }
+  100% {
+    top: 10vh;
+    font-size: 10vh;
+  }
+}
+
+#canvas {
+  /*animation: hide 0.5s ease-in-out;*/
 }
 
 

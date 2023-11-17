@@ -1,7 +1,9 @@
 import React from "react"
 
+import GithubProjects from "@/app/GithubProjects"
 import ThemeProvider from "@/app/ThemeProvider"
 import ThemeToggle from "@/app/ThemeToggle"
+import Title from "@/app/Title"
 
 export default function App() {
   return (
@@ -14,13 +16,10 @@ export default function App() {
       <div className="fixed right-5 top-5 z-10">
         <ThemeToggle />
       </div>
-      <h1 className="pointer-events-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-9xl whitespace-nowrap z-10">
-        CAM
-        <span id="i" className="inline-block z-20">
-          I
-        </span>
-        LLE ABELLA
-      </h1>
+      <Title />
+      <div className="fixed top-[20vh] p-5 h-[80vh] w-screen animate-show opacity-0">
+        <GithubProjects />
+      </div>
     </ThemeProvider>
   )
 }
