@@ -13,7 +13,7 @@ export default function GithubProject({ data }: { data: GithubProjectData }) {
             <AvatarImage src={data.image} alt={data.name} />
           </Avatar>
         </TableCell>
-        <TableCell className="text-2xl">{data.name}</TableCell>
+        <TableCell className="md:text-2xl">{data.name}</TableCell>
         <TableCell>{data.description}</TableCell>
         <TableCell>
           <div className="flex flex-wrap gap-1">

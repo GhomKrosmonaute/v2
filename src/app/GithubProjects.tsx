@@ -8,7 +8,7 @@ import githubProjects from "@/data/githubProjects"
 
 export default function GithubProjects() {
   return (
-    <div className="h-screen">
+    <div className="h-[80vh] lg:h-full">
       <ScrollArea className="w-full lg:w-1/2 h-full p-3">
         <CardHeader>
           <CardTitle>Current projects</CardTitle>

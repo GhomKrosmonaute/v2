@@ -17,7 +17,7 @@ export default function App() {
         <ThemeToggle />
       </div>
       <Title />
-      <div className="fixed top-[20vh] p-5 h-auto md:h-[80vh] w-screen animate-show opacity-0">
+      <div className="fixed top-[20vh] p-5 h-auto lg:h-[80vh] w-screen animate-show opacity-0">
         <GithubProjects />
       </div>
     </ThemeProvider>
