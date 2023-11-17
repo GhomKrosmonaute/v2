@@ -8,18 +8,20 @@ import githubProjects from "@/data/githubProjects"
 
 export default function GithubProjects() {
   return (
-    <ScrollArea className="w-full lg:w-1/2 h-full p-3">
-      <CardHeader>
-        <CardTitle>Current projects</CardTitle>
-        <CardDescription>My recent projects on Github</CardDescription>
-      </CardHeader>
-      <Table>
-        <TableBody>
-          {githubProjects.map((data, i) => (
-            <GithubProject key={i} data={data} />
-          ))}
-        </TableBody>
-      </Table>
-    </ScrollArea>
+    <div className="h-screen">
+      <ScrollArea className="w-full lg:w-1/2 h-full p-3">
+        <CardHeader>
+          <CardTitle>Current projects</CardTitle>
+          <CardDescription>My recent projects on Github</CardDescription>
+        </CardHeader>
+        <Table>
+          <TableBody>
+            {githubProjects.map((data, i) => (
+              <GithubProject key={i} data={data} />
+            ))}
+          </TableBody>
+        </Table>
+      </ScrollArea>
+    </div>
   )
 }

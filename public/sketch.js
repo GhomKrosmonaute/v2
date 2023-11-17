@@ -2,6 +2,8 @@ const brightLights = []
 const cursorTail = []
 const cursorTailLength = 20
 const cursorSize = 10
+let constantThunders = false
+let randomThunders = false
 let globalAlpha = 3
 let intensity = 60
 let primary = null
@@ -73,6 +75,68 @@ function launchThunders() {
     random(height),
     5
   )
+}
+
+function launchMouseThunders() {
+  stroke(primary)
+  if (mouseY < iBounds.top) {
+    thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, mouseX, mouseY)
+    thunder(mouseX, mouseY, random(width), 0)
+    thunder(
+      iBounds.left + iBounds.width / 2,
+      iBounds.bottom - 5,
+      random(width),
+      height
+    )
+  } else if (mouseY > iBounds.bottom) {
+    thunder(
+      iBounds.left + iBounds.width / 2,
+      iBounds.bottom - 5,
+      mouseX,
+      mouseY
+    )
+    thunder(mouseX, mouseY, random(width), height)
+    thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, random(width), 0)
+  } else {
+    thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, random(width), 0)
+    thunder(
+      iBounds.left + iBounds.width / 2,
+      iBounds.bottom - 5,
+      random(width),
+      height
+    )
+  }
+}
+
+function launchMouseReleasedThunders(mouseInCanvas) {
+  if (mouseY < iBounds.top && mouseInCanvas) {
+    thunder(random(h1Bounds.left, h1Bounds.right), h1Bounds.top, mouseX, mouseY)
+    thunder(mouseX, mouseY, random(width), 0)
+  } else {
+    thunder(
+      random(h1Bounds.left, h1Bounds.right),
+      h1Bounds.top,
+      random(width),
+      0
+    )
+  }
+
+  if (mouseY > iBounds.bottom && mouseInCanvas) {
+    thunder(
+      random(h1Bounds.left, h1Bounds.right),
+      h1Bounds.bottom,
+      mouseX,
+      mouseY
+    )
+    thunder(mouseX, mouseY, random(width), height)
+  } else {
+    thunder(
+      random(h1Bounds.left, h1Bounds.right),
+      h1Bounds.bottom,
+      random(width),
+      height
+    )
+  }
 }
 
 function thunder(fromX, fromY, toX, toY) {
@@ -147,44 +211,7 @@ function draw() {
   }
 
   if (mouseIsPressed) {
-    stroke(primary)
-    if (mouseY < iBounds.top) {
-      thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, mouseX, mouseY)
-      thunder(mouseX, mouseY, random(width), 0)
-      thunder(
-        iBounds.left + iBounds.width / 2,
-        iBounds.bottom - 5,
-        random(width),
-        height
-      )
-    } else if (mouseY > iBounds.bottom) {
-      thunder(
-        iBounds.left + iBounds.width / 2,
-        iBounds.bottom - 5,
-        mouseX,
-        mouseY
-      )
-      thunder(mouseX, mouseY, random(width), height)
-      thunder(
-        iBounds.left + iBounds.width / 2,
-        iBounds.top + 5,
-        random(width),
-        0
-      )
-    } else {
-      thunder(
-        iBounds.left + iBounds.width / 2,
-        iBounds.top + 5,
-        random(width),
-        0
-      )
-      thunder(
-        iBounds.left + iBounds.width / 2,
-        iBounds.bottom - 5,
-        random(width),
-        height
-      )
-    }
+    launchMouseThunders()
   }
 
   if (frameCount % 5 === 0) {
@@ -193,43 +220,11 @@ function draw() {
     document.body.style.setProperty("--brightIntensity", `${intensity}px`)
   }
 
-  if (intensity < 20) {
+  if ((intensity < 20 && randomThunders) || constantThunders) {
     for (let i = 0; i < (intensity / 50) * 2; i++) launchThunders()
 
     if (!mouseIsPressed) {
-      if (mouseY < iBounds.top && mouseInCanvas) {
-        thunder(
-          random(h1Bounds.left, h1Bounds.right),
-          h1Bounds.top,
-          mouseX,
-          mouseY
-        )
-        thunder(mouseX, mouseY, random(width), 0)
-      } else {
-        thunder(
-          random(h1Bounds.left, h1Bounds.right),
-          h1Bounds.top,
-          random(width),
-          0
-        )
-      }
-
-      if (mouseY > iBounds.bottom && mouseInCanvas) {
-        thunder(
-          random(h1Bounds.left, h1Bounds.right),
-          h1Bounds.bottom,
-          mouseX,
-          mouseY
-        )
-        thunder(mouseX, mouseY, random(width), height)
-      } else {
-        thunder(
-          random(h1Bounds.left, h1Bounds.right),
-          h1Bounds.bottom,
-          random(width),
-          height
-        )
-      }
+      launchMouseReleasedThunders(mouseInCanvas)
     }
   }
 
@@ -271,3 +266,16 @@ function mouseReleased() {
   const i = document.getElementById("i")
   i.classList.remove("bright")
 }
+
+randomThunders = true
+setTimeout(() => {
+  constantThunders = true
+
+  setTimeout(() => {
+    constantThunders = false
+
+    setTimeout(() => {
+      randomThunders = false
+    }, 3000)
+  }, 500)
+}, 500)

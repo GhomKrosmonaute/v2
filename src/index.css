@@ -91,16 +91,13 @@ h1 {
 @keyframes hide {
   0% {
     top: 50vh;
-    font-size: 20vh;
+    scale: 1;
   }
   100% {
     top: 10vh;
-    font-size: 10vh;
+    scale: 0.5;
+    transform: translate(-100%, -100%);
   }
-}
-
-#canvas {
-  /*animation: hide 0.5s ease-in-out;*/
 }
 
 
