@@ -78,6 +78,34 @@ const githubProjects: GithubProjectData[] = [
     url: "https://ghom.gitbook.io/bot-ts/",
     badges: ["TypeScript", "NodeJS"],
   },
+  {
+    image: bts,
+    name: "@ghom/bot.ts",
+    description: "Discord bot framework with CLI for generate files",
+    url: "https://ghom.gitbook.io/bot-ts/",
+    badges: ["TypeScript", "NodeJS"],
+  },
+  {
+    image: bts,
+    name: "@ghom/bot.ts",
+    description: "Discord bot framework with CLI for generate files",
+    url: "https://ghom.gitbook.io/bot-ts/",
+    badges: ["TypeScript", "NodeJS"],
+  },
+  {
+    image: bts,
+    name: "@ghom/bot.ts",
+    description: "Discord bot framework with CLI for generate files",
+    url: "https://ghom.gitbook.io/bot-ts/",
+    badges: ["TypeScript", "NodeJS"],
+  },
+  {
+    image: bts,
+    name: "@ghom/bot.ts",
+    description: "Discord bot framework with CLI for generate files",
+    url: "https://ghom.gitbook.io/bot-ts/",
+    badges: ["TypeScript", "NodeJS"],
+  },
 ]
 
 export default githubProjects
