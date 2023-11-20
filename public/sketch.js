@@ -9,6 +9,15 @@ let intensity = 60
 let primary = null
 let iBounds = null
 let h1Bounds = null
+let pause = false
+
+window.onbeforeunload = function () {
+  pause = true
+}
+
+window.onfocus = function () {
+  pause = false
+}
 
 function fetchBounds() {
   const i = document.getElementById("i")
@@ -55,11 +64,51 @@ function launchBrightLight() {
 function launchBrightLights() {
   launchBrightLight()
 
+  if (pause) return
+
   setTimeout(launchBrightLights, random(100, 500))
 }
 
-function launchThunders() {
+function launchThunderFromMouse() {
   stroke(primary)
+
+  thunder(mouseX, mouseY, random(width), 0)
+  thunder(mouseX, mouseY, random(width), height)
+  thunder(mouseX, mouseY, 0, random(height))
+  thunder(mouseX, mouseY, width, random(height))
+}
+
+function launchThunderFromI() {
+  stroke(primary)
+
+  thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, random(width), 0)
+
+  thunder(
+    iBounds.left + iBounds.width / 2,
+    iBounds.bottom - 5,
+    random(width),
+    height
+  )
+
+  thunder(
+    iBounds.left + iBounds.width / 2,
+    iBounds.bottom - 5,
+    random(width),
+    height
+  )
+}
+
+function launchThunderFromH1() {
+  stroke(primary)
+
+  thunder(random(h1Bounds.left, h1Bounds.right), h1Bounds.top, random(width), 0)
+
+  thunder(
+    random(h1Bounds.left, h1Bounds.right),
+    h1Bounds.bottom,
+    random(width),
+    height
+  )
 
   thunder(
     0,
@@ -68,6 +117,7 @@ function launchThunders() {
     h1Bounds.top + h1Bounds.height / 2,
     5
   )
+
   thunder(
     h1Bounds.right,
     h1Bounds.top + h1Bounds.height / 2,
@@ -75,68 +125,6 @@ function launchThunders() {
     random(height),
     5
   )
-}
-
-function launchMouseThunders() {
-  stroke(primary)
-  if (mouseY < iBounds.top) {
-    thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, mouseX, mouseY)
-    thunder(mouseX, mouseY, random(width), 0)
-    thunder(
-      iBounds.left + iBounds.width / 2,
-      iBounds.bottom - 5,
-      random(width),
-      height
-    )
-  } else if (mouseY > iBounds.bottom) {
-    thunder(
-      iBounds.left + iBounds.width / 2,
-      iBounds.bottom - 5,
-      mouseX,
-      mouseY
-    )
-    thunder(mouseX, mouseY, random(width), height)
-    thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, random(width), 0)
-  } else {
-    thunder(iBounds.left + iBounds.width / 2, iBounds.top + 5, random(width), 0)
-    thunder(
-      iBounds.left + iBounds.width / 2,
-      iBounds.bottom - 5,
-      random(width),
-      height
-    )
-  }
-}
-
-function launchMouseReleasedThunders(mouseInCanvas) {
-  if (mouseY < iBounds.top && mouseInCanvas) {
-    thunder(random(h1Bounds.left, h1Bounds.right), h1Bounds.top, mouseX, mouseY)
-    thunder(mouseX, mouseY, random(width), 0)
-  } else {
-    thunder(
-      random(h1Bounds.left, h1Bounds.right),
-      h1Bounds.top,
-      random(width),
-      0
-    )
-  }
-
-  if (mouseY > iBounds.bottom && mouseInCanvas) {
-    thunder(
-      random(h1Bounds.left, h1Bounds.right),
-      h1Bounds.bottom,
-      mouseX,
-      mouseY
-    )
-    thunder(mouseX, mouseY, random(width), height)
-  } else {
-    thunder(
-      random(h1Bounds.left, h1Bounds.right),
-      h1Bounds.bottom,
-      random(width),
-      height
-    )
-  }
 }
 
 function thunder(fromX, fromY, toX, toY) {
@@ -163,6 +151,14 @@ function thunder(fromX, fromY, toX, toY) {
     strokeWeight(random(1, 9))
     line(p1.x, p1.y, p2.x, p2.y)
   }
+}
+function isMouseInH1() {
+  return (
+    mouseX > h1Bounds.left &&
+    mouseX < h1Bounds.right &&
+    mouseY > h1Bounds.top &&
+    mouseY < h1Bounds.bottom
+  )
 }
 
 function setup() {
@@ -197,8 +193,8 @@ function draw() {
   fill(255)
   noStroke()
 
-  const mouseInCanvas =
-    mouseX > 50 && mouseX < width - 50 && mouseY > 50 && mouseY < height - 50
+  const mouseInCanvas = true
+  // mouseX > 50 && mouseX < width - 50 && mouseY > 50 && mouseY < height - 50
 
   if (globalAlpha > 0 && !mouseIsPressed) {
     globalAlpha -= 0.01
@@ -210,9 +206,16 @@ function draw() {
     light.draw()
   }
 
+  // mouse/i thunders
+
   if (mouseIsPressed) {
-    launchMouseThunders()
+    if (frameCount % int(random(5, 10)) === 0) {
+      if (isMouseInH1()) launchThunderFromI()
+      else launchThunderFromMouse()
+    }
   }
+
+  // intensity
 
   if (frameCount % 5 === 0) {
     intensity = int(random(10, 70))
@@ -220,49 +223,58 @@ function draw() {
     document.body.style.setProperty("--brightIntensity", `${intensity}px`)
   }
 
+  // h1 thunders on start
+
   if ((intensity < 20 && randomThunders) || constantThunders) {
-    for (let i = 0; i < (intensity / 50) * 2; i++) launchThunders()
-
-    if (!mouseIsPressed) {
-      launchMouseReleasedThunders(mouseInCanvas)
-    }
+    if (frameCount % 2 === 0) launchThunderFromH1(mouseInCanvas)
   }
 
-  if (mouseInCanvas) {
-    cursorTail.unshift({ x: mouseX, y: mouseY })
+  // cursor
 
-    if (cursorTail.length > cursorTailLength) {
-      cursorTail.pop()
-    }
+  cursorTail.unshift({ x: mouseX, y: mouseY })
 
-    for (let i = 0; i < cursorTail.length - 1; i++) {
-      stroke(
-        red(primary),
-        green(primary),
-        blue(primary),
-        255 // * (1 - easeInOutCubic(i / cursorTailLength))
-      )
-      strokeWeight(cursorSize * (1 - easeInOutCubic(i / cursorTailLength)))
-      line(
-        cursorTail[i].x,
-        cursorTail[i].y,
-        cursorTail[i + 1]?.x,
-        cursorTail[i + 1]?.y
-      )
-    }
-
-    fill(255)
-    noStroke()
-    circle(mouseX, mouseY, cursorSize)
+  if (cursorTail.length > cursorTailLength) {
+    cursorTail.pop()
   }
+
+  for (let i = 0; i < cursorTail.length - 1; i++) {
+    stroke(
+      red(primary),
+      green(primary),
+      blue(primary),
+      255 // * (1 - easeInOutCubic(i / cursorTailLength))
+    )
+    strokeWeight(cursorSize * (1 - easeInOutCubic(i / cursorTailLength)))
+    line(
+      cursorTail[i].x,
+      cursorTail[i].y,
+      cursorTail[i + 1]?.x,
+      cursorTail[i + 1]?.y
+    )
+  }
+
+  fill(255)
+  noStroke()
+  circle(mouseX, mouseY, cursorSize)
 }
 
 function mousePressed() {
-  const i = document.getElementById("i")
-  i.classList.add("bright")
+  if (!document.body.classList.contains("zap")) return
+
+  if (isMouseInH1()) {
+    const i = document.getElementById("i")
+    i.classList.add("bright")
+  }
+
+  requestAnimationFrame(() => {
+    if (isMouseInH1()) launchThunderFromI()
+    else launchThunderFromMouse()
+  })
 }
 
 function mouseReleased() {
+  if (!document.body.classList.contains("zap")) return
+
   const i = document.getElementById("i")
   i.classList.remove("bright")
 }

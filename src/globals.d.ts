@@ -1,7 +1,11 @@
 interface GithubProjectData {
+  name?: string
+  description: string | null
+  html_url: string
+  homepage: string | null
+  language: string
   image: string
-  name: string
-  description: string
-  url: string
-  badges?: string[]
+  stargazers_count: number
+  forks: number
+  open_issues: number
 }

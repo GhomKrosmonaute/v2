@@ -1,12 +1,15 @@
 import React from "react"
 
 import GithubProjects from "@/tabs/GithubProjects"
+import AboutMe from "@/tabs/AboutMe"
 
 import ThemeProvider from "@/app/ThemeProvider"
 import ThemeToggle from "@/app/ThemeToggle"
 import Title from "@/app/Title"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import GithubStats from "@/app/GithubStats"
+import BoltToggle from "@/app/BoltToggle"
 
 export default function App() {
   return (
@@ -16,9 +19,11 @@ export default function App() {
       enableSystem
       disableTransitionOnChange
     >
-      <div className="fixed right-5 top-5 z-10">
+      <div className="fixed right-5 top-5 z-10 flex gap-2">
         <ThemeToggle />
+        <BoltToggle />
       </div>
+      <GithubStats className="hidden xl:inline-block" />
       <Title />
       <Tabs
         defaultValue="account"
@@ -35,6 +40,9 @@ export default function App() {
           </TabsList>
         </div>
         <div className="h-[79vh]">
+          <TabsContent value="about">
+            <AboutMe />
+          </TabsContent>
           <TabsContent value="projects">
             <GithubProjects />
           </TabsContent>
