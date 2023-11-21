@@ -6,7 +6,7 @@ import {
   AvatarFallback,
 } from "@/components/ui/avatar"
 
-import pp from "@assets/profile-picture.png"
+import pp from "@assets/images/profile-picture.png"
 
 export default function Avatar() {
   return (

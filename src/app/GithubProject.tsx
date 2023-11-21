@@ -4,6 +4,7 @@ import { TableRow, TableCell } from "@/components/ui/table"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function GithubProject({ data }: { data: GithubProjectData }) {
   return (
@@ -23,9 +24,9 @@ export default function GithubProject({ data }: { data: GithubProjectData }) {
         </a>
       </TableCell>
       <TableCell>
-        <span className="overflow-y-hidden max-w-[400px] h-10 inline-block">
+        <ScrollArea className="overflow-y-hidden max-w-[400px] h-10 inline-block">
           {data.description}
-        </span>
+        </ScrollArea>
       </TableCell>
       <TableCell>
         <Badge>{data.language}</Badge>

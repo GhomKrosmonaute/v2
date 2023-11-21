@@ -61,14 +61,6 @@ function launchBrightLight() {
   })
 }
 
-function launchBrightLights() {
-  launchBrightLight()
-
-  if (pause) return
-
-  setTimeout(launchBrightLights, random(100, 500))
-}
-
 function launchThunderFromMouse() {
   stroke(primary)
 
@@ -178,8 +170,6 @@ function setup() {
   noSmooth()
 
   blendMode(DIFFERENCE)
-
-  launchBrightLights()
 }
 
 function windowResized() {
@@ -187,6 +177,10 @@ function windowResized() {
 }
 
 function draw() {
+  if (!document.body.classList.contains("zap")) return
+
+  if (frameCount % int(random(15, 40)) === 0) launchBrightLight()
+
   fetchBounds()
   translate(-width / 2, -height / 2)
   background(0, 0, 0, 0)
@@ -196,7 +190,7 @@ function draw() {
   const mouseInCanvas = true
   // mouseX > 50 && mouseX < width - 50 && mouseY > 50 && mouseY < height - 50
 
-  if (globalAlpha > 0 && !mouseIsPressed) {
+  if (globalAlpha > 0.5 && !mouseIsPressed) {
     globalAlpha -= 0.01
   } else if (globalAlpha < 1 && mouseIsPressed) {
     globalAlpha += 0.05

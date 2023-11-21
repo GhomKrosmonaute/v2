@@ -2,14 +2,16 @@ import React from "react"
 
 import GithubProjects from "@/tabs/GithubProjects"
 import AboutMe from "@/tabs/AboutMe"
+import Pricing from "@/tabs/Pricing"
+import Contact from "@/tabs/Contact"
 
 import ThemeProvider from "@/app/ThemeProvider"
 import ThemeToggle from "@/app/ThemeToggle"
 import Title from "@/app/Title"
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import GithubStats from "@/app/GithubStats"
 import BoltToggle from "@/app/BoltToggle"
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function App() {
   return (
@@ -45,6 +47,12 @@ export default function App() {
           </TabsContent>
           <TabsContent value="projects">
             <GithubProjects />
+          </TabsContent>
+          <TabsContent value="pricing">
+            <Pricing />
+          </TabsContent>
+          <TabsContent value="contact">
+            <Contact />
           </TabsContent>
         </div>
       </Tabs>
