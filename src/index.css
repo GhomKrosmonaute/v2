@@ -129,11 +129,11 @@ h1 {
 
 @keyframes hide {
   0% {
-    top: 50vh;
+    top: 50svh;
     scale: 1;
   }
   100% {
-    top: 10vh;
+    top: 10svh;
     scale: 0.5;
     transform: translate(-100%, -100%);
   }
