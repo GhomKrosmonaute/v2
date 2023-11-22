@@ -29,7 +29,7 @@ export default function App() {
       <Title />
       <Tabs
         defaultValue="account"
-        className="fixed top-[16vh] w-screen animate-show opacity-0"
+        className="fixed top-[16svh] w-screen animate-show opacity-0"
       >
         <div className="flex justify-center">
           <TabsList>
@@ -41,7 +41,7 @@ export default function App() {
             <TabsTrigger value="contact">Contact</TabsTrigger>
           </TabsList>
         </div>
-        <div className="h-[79vh]">
+        <div className="h-[79svh]">
           <TabsContent value="about">
             <AboutMe />
           </TabsContent>
