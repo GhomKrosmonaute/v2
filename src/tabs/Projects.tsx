@@ -17,7 +17,7 @@ export default function Projects() {
       <div className="h-[30px] flex items-center justify-center px-3">
         <div className="flex items-center gap-2">
           <Switch id="showAll" checked={showAll} onCheckedChange={setShowAll} />
-          <Label htmlFor="showAll">Show all</Label>
+          <Label htmlFor="showAll">Tout afficher</Label>
         </div>
       </div>
       <ScrollArea className="p-3 h-[calc(100%-30px)]">

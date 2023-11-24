@@ -101,7 +101,7 @@ body:not(.zap) canvas {
   display: none;
 }
 
-h1 {
+#title {
   font-family: 'Anton', sans-serif;
   text-shadow:
     rgba(124,58,237) 0 -4px 0,
@@ -127,19 +127,33 @@ h1 {
 }
 
 @keyframes hideTitle {
-  0% {}
-  100% {
-    top: 10svh;
-    left: 50vw;
+  0% {
+    top: 50svh;
+    opacity: 0;
+  }
+  70% {
     font-size: 50px;
+    top: 50svh;
+    opacity: 1;
+  }
+  100% {
+    font-size: 50px;
+    top: 10svh;
+    opacity: 1;
   }
 }
 
 @keyframes hideLogo {
-  0% {}
+  0% {
+    top: calc(50svh - 150px);
+    opacity: 0;
+  }
+  70% {
+    top: calc(50svh - 150px);
+    opacity: 1;
+  }
   100% {
     top: 10svh;
-    left: 50vw;
     opacity: 0.5;
   }
 }

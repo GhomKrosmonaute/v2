@@ -9,7 +9,7 @@ import ThemeProvider from "@/app/ThemeProvider"
 import ThemeToggle from "@/app/ThemeToggle"
 import Title from "@/app/Title"
 import GithubStats from "@/app/GithubStats"
-import BoltToggle from "@/app/BoltToggle"
+// import BoltToggle from "@/app/BoltToggle"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -23,7 +23,7 @@ export default function App() {
     >
       <div className="fixed right-5 top-5 z-10 flex gap-2">
         <ThemeToggle />
-        <BoltToggle />
+        {/*<BoltToggle />*/}
       </div>
       <GithubStats className="hidden xl:inline-block" />
       <Title />
@@ -33,11 +33,11 @@ export default function App() {
       >
         <div className="flex justify-center">
           <TabsList>
-            <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="about">A propos</TabsTrigger>
             <TabsTrigger value="projects" autoFocus>
-              Projects
+              Projets
             </TabsTrigger>
-            <TabsTrigger value="pricing">Pricing</TabsTrigger>
+            <TabsTrigger value="pricing">Tarifs</TabsTrigger>
             <TabsTrigger value="contact">Contact</TabsTrigger>
           </TabsList>
         </div>
