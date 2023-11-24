@@ -127,20 +127,18 @@ h1 {
 }
 
 @keyframes hideTitle {
-  0% {
-  }
+  0% {}
   100% {
-    top: 10vh;
+    top: 10svh;
     left: 50vw;
     font-size: 50px;
   }
 }
 
 @keyframes hideLogo {
-  0% {
-  }
+  0% {}
   100% {
-    top: 10vh;
+    top: 10svh;
     left: 50vw;
     opacity: 0.5;
   }
