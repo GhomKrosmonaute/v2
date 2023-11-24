@@ -1,4 +1,4 @@
-interface GithubProjectData {
+interface GithubProjectRowData {
   name?: string
   description: string | null
   html_url: string
@@ -8,4 +8,9 @@ interface GithubProjectData {
   stargazers_count: number
   forks: number
   open_issues: number
+}
+
+interface GithubProjectCardData {
+  org: string
+  repo: string
 }

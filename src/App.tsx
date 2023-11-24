@@ -1,6 +1,6 @@
 import React from "react"
 
-import GithubProjects from "@/tabs/GithubProjects"
+import Projects from "@/tabs/Projects"
 import AboutMe from "@/tabs/AboutMe"
 import Pricing from "@/tabs/Pricing"
 import Contact from "@/tabs/Contact"
@@ -46,7 +46,7 @@ export default function App() {
             <AboutMe />
           </TabsContent>
           <TabsContent value="projects">
-            <GithubProjects />
+            <Projects />
           </TabsContent>
           <TabsContent value="pricing">
             <Pricing />

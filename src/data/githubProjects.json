@@ -288,6 +288,18 @@
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
   {
+    "name": "@ghom/game",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "HTML5 game boilerplate created with @ghom/booyah and pixi.js",
+    "html_url": "https://github.com/GhomKrosmonaute/game",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
     "name": "gamejam22",
     "stargazers_count": 1,
     "forks": 0,
@@ -844,9 +856,9 @@
     "stargazers_count": 4,
     "forks": 0,
     "language": "TypeScript",
-    "description": "Shooter Game in TypeScript, online test:",
+    "description": "Shooter Game in TypeScript",
     "html_url": "https://github.com/GhomKrosmonaute/TypedShooterGame",
-    "homepage": "https://camilleabella.github.io/TypedShooterGame/",
+    "homepage": "https://ghomkrosmonaute.github.io/TypedShooterGame/",
     "open_issues": 0,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
@@ -1218,7 +1230,7 @@
     "language": "HTML",
     "description": null,
     "html_url": "https://github.com/Les-Laboratoires/Les-Laboratoires-JS.github.io",
-    "homepage": null,
+    "homepage": "https://les-laboratoires.github.io/Les-Laboratoires-JS.github.io/",
     "open_issues": 0,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/56362993?v=4"

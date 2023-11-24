@@ -1,0 +1,18 @@
+[
+  {
+    "org": "bot-ts",
+    "repo": "framework"
+  },
+  {
+    "org": "GhomKrosmonaute",
+    "repo": "TypedShooterGame"
+  },
+  {
+    "org": "GhomKrosmonaute",
+    "repo": "orm"
+  },
+  {
+    "org": "GhomKrosmonaute",
+    "repo": "djs-docs-bot"
+  }
+]

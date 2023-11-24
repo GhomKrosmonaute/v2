@@ -1,12 +1,6 @@
 import React from "react"
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardDescription,
-} from "@/components/ui/card"
-import { AlertCircleIcon, AlertTriangle, Mail } from "lucide-react"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { AlertTriangle, Mail } from "lucide-react"
 import ContactLine from "@/app/ContactLine"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 

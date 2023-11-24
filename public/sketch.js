@@ -144,6 +144,7 @@ function thunder(fromX, fromY, toX, toY) {
     line(p1.x, p1.y, p2.x, p2.y)
   }
 }
+
 function isMouseInH1() {
   return (
     mouseX > h1Bounds.left &&

@@ -90,10 +90,6 @@
   /*cursor: none;*/
 }
 
-body {
-  --brightIntensity: 0;
-}
-
 canvas {
   position: absolute;
   left: 0;
@@ -107,13 +103,16 @@ body:not(.zap) canvas {
 
 h1 {
   font-family: 'Anton', sans-serif;
-  text-shadow: rgb(124,58,237) 0 0 var(--brightIntensity), rgb(124,58,237) 0 0 calc(var(--brightIntensity) * 5), rgb(124,58,237) 0 0 200px;
+  text-shadow:
+    rgba(124,58,237) 0 -4px 0,
+    rgba(0, 0, 0) 0 4px 0,
+    2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  transform: translate(-50%, -50%);
 }
 
-#i.bright {
-  text-shadow:
-    rgb(124,58,237) 0 calc(var(--brightIntensity) * -1) calc(var(--brightIntensity) * 1),
-    rgb(124,58,237) 0 calc(var(--brightIntensity) * 1) calc(var(--brightIntensity) * 1);
+#logo {
+  transform: translate(-50%, -50%);
 }
 
 @keyframes show {
@@ -127,15 +126,23 @@ h1 {
   }
 }
 
-@keyframes hide {
+@keyframes hideTitle {
   0% {
-    top: 50vh;
-    scale: 1;
   }
   100% {
     top: 10vh;
-    scale: 0.5;
-    transform: translate(-100%, -100%);
+    left: 50vw;
+    font-size: 50px;
+  }
+}
+
+@keyframes hideLogo {
+  0% {
+  }
+  100% {
+    top: 10vh;
+    left: 50vw;
+    opacity: 0.5;
   }
 }
 
