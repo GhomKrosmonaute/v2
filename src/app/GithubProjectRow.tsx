@@ -4,7 +4,7 @@ import { TableRow, TableCell } from "@/components/ui/table"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
 export default function GithubProjectRow({
   data,
@@ -18,22 +18,26 @@ export default function GithubProjectRow({
           <AvatarImage src={data.image} alt={data.name} />
         </Avatar>
       </TableCell>
-      <TableCell className="xl:text-2xl overflow-x-hidden whitespace-nowrap">
-        <a
-          href={data.homepage ?? data.html_url}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {data.name}
-        </a>
-      </TableCell>
       <TableCell>
-        <ScrollArea className="overflow-y-hidden max-w-[400px] h-10 inline-block">
-          {data.description}
-        </ScrollArea>
+        <div className="xl:text-2xl overflow-x-hidden whitespace-nowrap">
+          <a
+            href={data.homepage ?? data.html_url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {data.name!.length > 20
+              ? data.name!.slice(0, 20) + "..."
+              : data.name}
+          </a>
+        </div>
       </TableCell>
-      <TableCell>
+      <TableCell className="hidden sm:inline-block">
         <Badge>{data.language}</Badge>
+      </TableCell>
+      <TableCell className="hidden md:inline-block">
+        <ScrollArea className="max-w-[400px] h-[40px] flex items-center">
+          <p>{data.description}</p>
+        </ScrollArea>
       </TableCell>
       <TableCell className="hidden lg:inline-block">
         ⭐ {data.stargazers_count}

@@ -64,7 +64,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "jsx-a11y/heading-has-content": "off"
+    }
   },
   "browserslist": {
     "production": [

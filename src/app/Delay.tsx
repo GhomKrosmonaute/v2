@@ -4,7 +4,7 @@ export default function Delay({
   showElement,
   duration,
 }: {
-  showElement: () => React.ReactNode
+  showElement: React.ReactNode
   duration: number
 }) {
   const [show, setShow] = React.useState(false)
@@ -14,5 +14,7 @@ export default function Delay({
     return () => clearTimeout(timeout)
   }, [duration])
 
-  return <>{show && <div className="fade-in-10">{showElement()}</div>}</>
+  if (!show) return <></>
+
+  return <>{showElement}</>
 }
