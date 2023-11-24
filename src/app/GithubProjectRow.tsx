@@ -4,7 +4,7 @@ import { TableRow, TableCell } from "@/components/ui/table"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function GithubProjectRow({
   data,
@@ -31,24 +31,22 @@ export default function GithubProjectRow({
           </a>
         </div>
       </TableCell>
-      <TableCell className="hidden sm:inline-block">
+      <TableCell className="hidden sm:table-cell">
         <Badge>{data.language}</Badge>
       </TableCell>
-      <TableCell className="hidden md:inline-block">
+      <TableCell className="hidden md:table-cell">
         <ScrollArea className="max-w-[400px] h-[40px] flex items-center">
           <p>{data.description}</p>
         </ScrollArea>
       </TableCell>
-      <TableCell className="hidden lg:inline-block">
+      <TableCell className="hidden lg:table-cell">
         ⭐ {data.stargazers_count}
       </TableCell>
-      <TableCell className="hidden lg:inline-block">
-        {data.forks} forks
-      </TableCell>
-      <TableCell className="hidden lg:inline-block">
+      <TableCell className="hidden lg:table-cell">{data.forks} forks</TableCell>
+      <TableCell className="hidden lg:table-cell">
         <div>{data.open_issues} issues</div>
       </TableCell>
-      <TableCell className="hidden xl:inline-block">
+      <TableCell className="hidden xl:table-cell">
         <Button asChild variant="outline">
           <a href={data.html_url} target="_blank" rel="noreferrer">
             <svg
