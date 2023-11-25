@@ -55,7 +55,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\" generate.mjs",
-    "generate": "node generate.mjs"
+    "generate": "node generate.mjs",
+    "share": "cloudflared tunnel --url http://localhost:3000"
   },
   "prettier": {
     "semi": false,

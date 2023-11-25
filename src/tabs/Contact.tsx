@@ -1,17 +1,22 @@
 import React from "react"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
 import { AlertTriangle, Mail } from "lucide-react"
 import ContactLine from "@/app/ContactLine"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function Contact() {
   return (
-    <address className="flex flex-wrap p-3 gap-10 justify-center items-center">
-      <Card>
-        <CardHeader>
-          <CardTitle>Contact</CardTitle>
-        </CardHeader>
-        <CardContent>
+    <ScrollArea className="w-screen h-full">
+      <div className="container mx-auto flex flex-col xl:flex-row gap-3">
+        <div className="basis-full">
+          <h2 className="text-3xl my-3">Me contacter</h2>
           <Alert className="mb-2">
             <AlertTriangle className="h-4 w-4" />
             <AlertTitle>Je ne réponds pas aux appels téléphoniques</AlertTitle>
@@ -81,18 +86,30 @@ export default function Contact() {
               </ContactLine>
             </li>
           </ul>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Adresse</CardTitle>
-        </CardHeader>
-        <CardContent>
-          5 Rue Agusanum <br />
-          66240 Saint-Estève <br />
-          France
-        </CardContent>
-      </Card>
-    </address>
+        </div>
+        <div className="basis-full">
+          <h2 className="text-3xl my-3">Adresse postale</h2>
+          <address>
+            <Card className="w-full">
+              <CardHeader>
+                <CardTitle>Camille Abella</CardTitle>
+              </CardHeader>
+              <CardContent>5 Rue Agusanum 66240 Saint-Estève</CardContent>
+              <CardFooter>Europe/France</CardFooter>
+            </Card>
+          </address>
+          <span className="text-2xl">
+            Heure française:{" "}
+            <span className="font-mono">
+              {new Date().toLocaleTimeString("fr-FR", {
+                timeZone: "Europe/Paris",
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </span>
+          </span>
+        </div>
+      </div>
+    </ScrollArea>
   )
 }
