@@ -115,6 +115,14 @@ body:not(.zap) canvas {
   transform: translate(-50%, -50%);
 }
 
+#redaction p {
+  @apply text-justify;
+}
+
+#redaction h2 {
+  @apply text-3xl mb-3 mt-10;
+}
+
 @keyframes show {
   from {
     opacity: 0;
