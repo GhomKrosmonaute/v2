@@ -6,6 +6,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
+import GithubProjectStars from "@/app/GithubProjectStars"
+import GithubProjectForks from "@/app/GithubProjectForks"
+import GithubProjectIssues from "@/app/GithubProjectIssues"
+
 export default function GithubProjectRow({
   data,
 }: {
@@ -19,7 +23,7 @@ export default function GithubProjectRow({
         </Avatar>
       </TableCell>
       <TableCell>
-        <div className="xl:text-2xl overflow-x-hidden whitespace-nowrap">
+        <div className="text-2xl overflow-x-hidden whitespace-nowrap">
           <a
             href={data.homepage ?? data.html_url}
             target="_blank"
@@ -40,11 +44,13 @@ export default function GithubProjectRow({
         </ScrollArea>
       </TableCell>
       <TableCell className="hidden lg:table-cell">
-        ⭐ {data.stargazers_count}
+        <GithubProjectStars count={data.stargazers_count} />
       </TableCell>
-      <TableCell className="hidden lg:table-cell">{data.forks} forks</TableCell>
       <TableCell className="hidden lg:table-cell">
-        <div>{data.open_issues} issues</div>
+        <GithubProjectForks count={data.forks} />
+      </TableCell>
+      <TableCell className="hidden lg:table-cell">
+        <GithubProjectIssues count={data.open_issues} />
       </TableCell>
       <TableCell className="hidden xl:table-cell">
         <Button asChild variant="outline">

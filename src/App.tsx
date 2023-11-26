@@ -56,7 +56,7 @@ export default function App() {
               <AboutMe />
             </TabsContent>
             <TabsContent value="projects">
-              <Projects />
+              <Projects headerEnabled={headerEnabled} />
             </TabsContent>
             <TabsContent value="pricing">
               <Pricing />

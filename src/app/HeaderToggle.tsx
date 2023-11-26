@@ -12,7 +12,7 @@ export default function HeaderToggle({
 }) {
   return (
     <Button variant="outline" size="icon" onClick={() => setEnabled(!enabled)}>
-      {enabled ? <ChevronDown /> : <ChevronUp />}
+      {enabled ? <ChevronUp /> : <ChevronDown />}
     </Button>
   )
 }

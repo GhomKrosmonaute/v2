@@ -1,36 +1,75 @@
 import React from "react"
+
 import { Table, TableBody } from "@/components/ui/table"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import GithubProjectRow from "@/app/GithubProjectRow"
+import { Accordion } from "@/components/ui/accordion"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 
+import GithubProjectCard from "@/app/GithubProjectCard"
+import GithubProjectRowSkeleton from "@/app/GithubProjectRowSkeleton"
+import GithubProjectAccordionSkeleton from "@/app/GithubProjectAccordionSkeleton"
+
 import githubProjects from "@/data/githubProjects.json"
 import githubFavoriteProjects from "@/data/githubFavoriteProjects.json"
-import GithubProjectCard from "@/app/GithubProjectCard"
 
-export default function Projects() {
+const GithubProjectRow = React.lazy(() => import("@/app/GithubProjectRow"))
+const GithubProjectAccordion = React.lazy(
+  () => import("@/app/GithubProjectAccordion")
+)
+
+export default function Projects({
+  headerEnabled,
+}: {
+  headerEnabled: boolean
+}) {
   const [showAll, setShowAll] = React.useState(false)
 
   return (
     <>
-      <div className="h-[30px] flex items-center justify-center px-3">
-        <div className="flex items-center gap-2">
+      <div
+        className={
+          "h-[30px] flex items-center px-3 " +
+          (headerEnabled ? "justify-center" : "justify-start md:justify-center")
+        }
+      >
+        <div className="flex gap-2 items-center">
           <Switch id="showAll" checked={showAll} onCheckedChange={setShowAll} />
           <Label htmlFor="showAll">Tout afficher</Label>
         </div>
       </div>
       <ScrollArea className="p-3 h-[calc(100%-30px)]">
         {showAll ? (
-          <Table className="table-auto">
-            <TableBody>
-              {githubProjects
-                .sort((a, b) => b.stargazers_count - a.stargazers_count)
-                .map((data, i) => (
-                  <GithubProjectRow key={i} data={data} />
-                ))}
-            </TableBody>
-          </Table>
+          <>
+            <div className="hidden md:block">
+              <Table className="table-auto">
+                <TableBody>
+                  {githubProjects
+                    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                    .map((data, i) => (
+                      <React.Suspense
+                        key={i}
+                        fallback={<GithubProjectRowSkeleton key={i} />}
+                        children={<GithubProjectRow key={i} data={data} />}
+                      />
+                    ))}
+                </TableBody>
+              </Table>
+            </div>
+            <div className="block md:hidden">
+              <Accordion type="single" collapsible>
+                {githubProjects
+                  .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                  .map((data, i) => (
+                    <React.Suspense
+                      key={i}
+                      fallback={<GithubProjectAccordionSkeleton />}
+                      children={<GithubProjectAccordion data={data} />}
+                    />
+                  ))}
+              </Accordion>
+            </div>
+          </>
         ) : (
           <div className="flex flex-wrap justify-center h-full w-full gap-3">
             {githubFavoriteProjects.map((data, i) => (
