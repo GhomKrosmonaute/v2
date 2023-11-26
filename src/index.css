@@ -123,6 +123,23 @@ body:not(.zap) canvas {
   @apply text-3xl mb-3 mt-10;
 }
 
+.header {
+  transition: transform 0.2s ease-in-out !important;
+}
+
+.hide-header .header {
+  transform: translateY(-50px) rotate(25deg) scale(0) !important;
+}
+
+.content {
+  transition: top 0.5s ease-in-out, height 0.5s ease-in-out !important;
+}
+
+.hide-header .content {
+  top: -130px !important;
+  height: 100svh !important;
+}
+
 @keyframes show {
   from {
     opacity: 0;
