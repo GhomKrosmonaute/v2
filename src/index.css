@@ -116,11 +116,11 @@ body:not(.zap) canvas {
 }
 
 #redaction p {
-  @apply text-justify;
+  @apply text-justify my-5;
 }
 
 #redaction h2 {
-  @apply text-3xl mb-3 mt-10;
+  @apply text-3xl mb-2 mt-7;
 }
 
 .header {
