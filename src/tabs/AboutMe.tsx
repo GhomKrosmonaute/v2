@@ -12,8 +12,14 @@ export default function AboutMe() {
           <AlertTriangle className="h-4 w-4" />
           <AlertTitle>Work in progress</AlertTitle>
         </Alert>
-        <div id="redaction" className="block xl:flex xl:gap-3">
-          <div className="basis-full">
+        <div
+          id="redaction"
+          className="block xl:flex flex-col flex-wrap xl:gap-3"
+          style={{
+            maxHeight: "min-content",
+          }}
+        >
+          <div>
             <h2>A propos de moi</h2>
             <p>
               Je suis Camille Abella, plus connu sous le pseudo Ghom, un
@@ -48,6 +54,8 @@ export default function AboutMe() {
               discuter de la manière dont nous pourrions travailler ensemble
               pour concrétiser votre vision en ligne.
             </p>
+          </div>
+          <div>
             <h2>Mon parcours scolaire</h2>
             <p>
               Mon parcours scolaire a été tout sauf conventionnel, marqué par
@@ -87,6 +95,9 @@ export default function AboutMe() {
               dans chaque projet, apportant une touche unique et novatrice à
               chaque ligne de code que je crée.
             </p>
+          </div>
+
+          <div>
             <h2>Les jeux vidéos</h2>
             <p>
               Les jeux vidéo ont été une source inépuisable de passion et
@@ -120,6 +131,8 @@ export default function AboutMe() {
               un pouvoir irrésistible. Désolé, cher ami, si tu lis ceci. C'était
               une aventure mémorable! 😄
             </p>
+          </div>
+          <div>
             <h2>Ma formation</h2>
             <p>
               Ma vie a pris un tournant significatif lorsqu'une étape cruciale
@@ -141,6 +154,8 @@ export default function AboutMe() {
               de sociabilisation et apprendre à collaborer de manière
               constructive.
             </p>
+          </div>
+          <div>
             <h2>Mes premiers pas dans le monde du travail</h2>
             <p>
               Tout a commencé lors de ma participation enthousiaste au Startup
@@ -177,17 +192,28 @@ export default function AboutMe() {
               d'apprentissages, a contribué à forger la trajectoire qui m'a
               conduit là où je suis aujourd'hui.
             </p>
+          </div>
+          <div>
             <h2>PlayCurious</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
-              delectus doloremque dolores fuga maiores modi molestiae nam, omnis
-              pariatur perferendis tenetur veniam! Accusantium commodi deleniti,
-              dolores non tempore veritatis? Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Accusamus aliquam delectus dicta
-              earum excepturi explicabo impedit minus, necessitatibus obcaecati
-              quia sed sunt. Dolore dolores laboriosam officia quasi quia
-              repudiandae tempora?
+              Quand j'ai rejoint PlayCurious, j'ai été accueilli par une équipe
+              dynamique et passionnée, qui m'a offert une immersion dans
+              l'univers du développement de jeu vidéo. J'ai eu l'occasion de
+              travailler sur une multitude de serious games, qui ont été une
+              source inépuisable d'inspiration et d'apprentissage. J'ai
+              également développé des compétences en gestion de projet, en
+              travaillant avec des équipes de développeurs et de graphistes pour
+              créer des jeux vidéo uniques.
             </p>
+            <p>
+              Je suis resté 5 ans dans cette boite, dont 2 ans en tant que
+              stagiaire, et 3 en tant qu'apprentis. Au cours de cette période,
+              j'ai eu l'occasion de développer mes compétences en développement
+              web, mais aussi en game design, en graphisme et en marketing. Si
+              c'était à refaire je ne changerais rien.
+            </p>
+          </div>
+          <div>
             <h2>Mes premiers gros projets</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
@@ -200,8 +226,7 @@ export default function AboutMe() {
               repudiandae tempora?
             </p>
           </div>
-          <Separator className="hidden xl:block" orientation="vertical" />
-          <div className="basis-full">
+          <div>
             <h2>Les Laboratoires JS</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
@@ -213,6 +238,8 @@ export default function AboutMe() {
               quia sed sunt. Dolore dolores laboriosam officia quasi quia
               repudiandae tempora?
             </p>
+          </div>
+          <div>
             <h2>Mon projet de boite de jeu vidéo</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
@@ -224,6 +251,8 @@ export default function AboutMe() {
               quia sed sunt. Dolore dolores laboriosam officia quasi quia
               repudiandae tempora?
             </p>
+          </div>
+          <div>
             <h2>Mon but dans la vie</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
@@ -235,6 +264,8 @@ export default function AboutMe() {
               quia sed sunt. Dolore dolores laboriosam officia quasi quia
               repudiandae tempora?
             </p>
+          </div>
+          <div>
             <h2>Ma philosophie</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
