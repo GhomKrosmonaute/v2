@@ -16,7 +16,8 @@ export default function AboutMe() {
           id="redaction"
           className="block xl:flex flex-col flex-wrap xl:gap-3"
           style={{
-            maxHeight: "min-content",
+            height: "3000px",
+            // maxHeight: "min-content",
           }}
         >
           <div>
@@ -96,7 +97,6 @@ export default function AboutMe() {
               chaque ligne de code que je crée.
             </p>
           </div>
-
           <div>
             <h2>Les jeux vidéos</h2>
             <p>
