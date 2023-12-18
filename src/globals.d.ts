@@ -14,3 +14,10 @@ interface GithubProjectCardData {
   org: string
   repo: string
 }
+
+interface ProfessionalProjectRowData {
+  name: string
+  description: string[]
+  image: string
+  url: string
+}

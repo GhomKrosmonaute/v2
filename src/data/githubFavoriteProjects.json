@@ -14,5 +14,13 @@
   {
     "org": "GhomKrosmonaute",
     "repo": "djs-docs-bot"
+  },
+  {
+    "org": "GhomKrosmonaute",
+    "repo": "booyah"
+  },
+  {
+    "org": "Les-Laboratoires",
+    "repo": "lab-tools"
   }
 ]

@@ -120,6 +120,18 @@
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
   {
+    "name": "@ghom/create-creator",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "JavaScript",
+    "description": "Boilerplace for `npm create thing` CLI creators",
+    "html_url": "https://github.com/GhomKrosmonaute/create-creator",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
     "name": "json-debby",
     "stargazers_count": 1,
     "forks": 0,
@@ -616,9 +628,9 @@
     "stargazers_count": 1,
     "forks": 0,
     "language": "TypeScript",
-    "description": "KnexJS ORM separated from make-bot.ts",
+    "description": "KnexJS ORM with table versioning",
     "html_url": "https://github.com/GhomKrosmonaute/orm",
-    "homepage": null,
+    "homepage": "",
     "open_issues": 0,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
@@ -792,6 +804,18 @@
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
   {
+    "name": "@ghom/task",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "Modern task runner for Node.js (gulp like)",
+    "html_url": "https://github.com/GhomKrosmonaute/task",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
     "name": "terraform-coding-challenges",
     "stargazers_count": 0,
     "forks": 0,
@@ -942,6 +966,18 @@
     "language": "JavaScript",
     "description": "API template for Vitrined website",
     "html_url": "https://github.com/GhomKrosmonaute/Vitrined-API",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
+    "name": "@ghom/web-scrapper",
+    "stargazers_count": 1,
+    "forks": 0,
+    "language": "JavaScript",
+    "description": "Simple web scrapper using query selectors",
+    "html_url": "https://github.com/GhomKrosmonaute/web-scrapper",
     "homepage": null,
     "open_issues": 0,
     "fork": false,

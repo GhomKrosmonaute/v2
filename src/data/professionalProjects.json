@@ -1,0 +1,22 @@
+[
+  {
+    "name": "CRISPR Crunch",
+    "description": [
+      "Défendez vos bactéries contre les vagues de virus qui les attaquent, en faisant correspondre leurs séquences d'ADN. CRISPR Crunch est un jeu mobile gratuit qui vous plonge dans le monde merveilleux de la microbiologie. Le gameplay combine des mécanismes familiers de correspondance de tuiles avec un cadre et une histoire scientifique innovante.",
+      "Projet réalisé chez PlayCurious en TypeScript avec le moteur de jeu booyah et le moteur de rendu pixi.js. J'ai travaillé sur le gameplay, l'interface utilisateur, l'animation, l'audio et l'intégration de l'application mobile. J'ai également travaillé sur le level design et la conception des niveaux."
+    ],
+    "image": "CRISPR-Crunch.png",
+    "url": "https://playcurious.games/our-games/crispr-crunch/"
+  },
+  {
+    "name": "Edenred Boat Quest",
+    "description": [
+      "Il s'agit d'un jeu vidéo événementiel sur le thème des vacances créé en un peu moins d'un mois pour Edenred, comme une alternative ludique à la carte événementielle habituelle.",
+      "Le jeu invite les joueurs à nettoyer l’océan du plastique et autres déchets. Le jeu a été disponible pendant deux mois, période pendant laquelle Edenred s'est engagé à reverser une donation à une ONG spécialisée dans le nettoyage des océans en fonction du score total réalisé par les joueurs à l'issue de l'opération.",
+      "Inspiré des jeux d'arcade classiques ainsi que des jeux de nettoyage mobiles, Edenred Boat Quest propose un gameplay de collection simple avec une augmentation progressive de la difficulté. Certaines sessions de jeu durent environ 5 à 10 minutes, mais les joueurs continueront pour battre le meilleur score !",
+      "Projet réalisé chez PlayCurious en TypeScript avec le moteur de jeu booyah et le moteur de rendu pixi.js. J'ai travaillé sur le gameplay, l'interface utilisateur, l'animation, la physique du bateau et la progression de la difficulté."
+    ],
+    "image": "EdenRed-Boat-Quest.png",
+    "url": "https://playcurious.games/our-games/edenred-boat-quest/"
+  }
+]

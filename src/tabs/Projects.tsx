@@ -3,6 +3,7 @@ import React from "react"
 import { Table, TableBody } from "@/components/ui/table"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Accordion } from "@/components/ui/accordion"
+import { Separator } from "@/components/ui/separator"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 
@@ -12,6 +13,8 @@ import GithubProjectAccordionSkeleton from "@/app/GithubProjectAccordionSkeleton
 
 import githubProjects from "@/data/githubProjects.json"
 import githubFavoriteProjects from "@/data/githubFavoriteProjects.json"
+import professionalProjects from "@/data/professionalProjects.json"
+import ProfessionalProjectRow from "@/app/ProfessionalProjectRow"
 
 const GithubProjectRow = React.lazy(() => import("@/app/GithubProjectRow"))
 const GithubProjectAccordion = React.lazy(
@@ -64,17 +67,28 @@ export default function Projects({
                     <React.Suspense
                       key={i}
                       fallback={<GithubProjectAccordionSkeleton />}
-                      children={<GithubProjectAccordion data={data} />}
+                      children={<GithubProjectAccordion data={data} key={i} />}
                     />
                   ))}
               </Accordion>
             </div>
           </>
         ) : (
-          <div className="flex flex-wrap justify-center h-full w-full gap-3">
-            {githubFavoriteProjects.map((data, i) => (
-              <GithubProjectCard key={i} data={data} />
-            ))}
+          <div className="container">
+            <h2 className="text-center">Mes principaux projets</h2>
+            <Separator className="hidden dark:block" />
+            <div className="flex flex-wrap justify-center xl:justify-between h-full w-full gap-3">
+              {githubFavoriteProjects.map((data, i) => (
+                <GithubProjectCard key={i} data={data} />
+              ))}
+            </div>
+            <h2 className="text-center">Mes projets professionnel</h2>
+            <Separator className="hidden dark:block" />
+            <div>
+              {professionalProjects.map((data, i) => (
+                <ProfessionalProjectRow key={i} _key={i} data={data} />
+              ))}
+            </div>
           </div>
         )}
       </ScrollArea>
