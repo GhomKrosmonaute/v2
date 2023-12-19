@@ -3,7 +3,6 @@ import React from "react"
 import { TableRow, TableCell } from "@/components/ui/table"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 import GithubProjectStars from "@/app/GithubProjectStars"

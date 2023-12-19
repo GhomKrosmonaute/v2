@@ -2,7 +2,6 @@ import React from "react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { AlertTriangle } from "lucide-react"
 import { Alert, AlertTitle } from "@/components/ui/alert"
-import { Separator } from "@/components/ui/separator"
 
 export default function AboutMe() {
   return (

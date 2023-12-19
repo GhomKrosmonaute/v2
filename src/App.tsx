@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 
 import Projects from "@/tabs/Projects"
 import AboutMe from "@/tabs/AboutMe"
@@ -15,13 +15,11 @@ import Title from "@/app/Title"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import HeaderToggle from "@/app/HeaderToggle"
 
+let rdm = Math.random()
+
 export default function App() {
   const [dynamic, setDynamic] = React.useState(true)
   const [headerEnabled, setHeaderEnabled] = React.useState(true)
-
-  useEffect(() => {
-    if (!headerEnabled) setDynamic(false)
-  }, [headerEnabled])
 
   return (
     <ThemeProvider
@@ -31,7 +29,10 @@ export default function App() {
       disableTransitionOnChange
     >
       <div className={headerEnabled ? "" : "hide-header"}>
-        <GithubStats className="header hidden xl:inline-block z-10 fixed top-0 left-0" />
+        <GithubStats
+          className="header hidden xl:inline-block z-10 fixed top-0 left-0"
+          rdm={rdm}
+        />
         <Background />
         <div className="fixed right-1 top-1 gap-1 scale-75 sm:right-5 sm:top-5 sm:gap-2 sm:scale-100 flex z-20">
           <HeaderToggle enabled={headerEnabled} setEnabled={setHeaderEnabled} />
