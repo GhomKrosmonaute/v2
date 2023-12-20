@@ -120,7 +120,7 @@ body:not(.zap) canvas {
 }
 
 #redaction > div {
-  @apply xl:w-1/2;
+  @apply xl:w-1/2 p-2;
 }
 
 h2 {

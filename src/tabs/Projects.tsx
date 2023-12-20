@@ -43,7 +43,7 @@ export default function Projects({
       </div>
       <ScrollArea className="p-3 h-[calc(100%-30px)]">
         {showAll ? (
-          <>
+          <div className="container">
             <div className="hidden md:block">
               <Table className="table-auto">
                 <TableBody>
@@ -72,18 +72,18 @@ export default function Projects({
                   ))}
               </Accordion>
             </div>
-          </>
+          </div>
         ) : (
           <div className="container">
             <h2 className="text-center">Mes principaux projets</h2>
-            <Separator className="hidden dark:block" />
+            <Separator />
             <div className="flex flex-wrap justify-center xl:justify-between h-full w-full gap-3">
               {githubFavoriteProjects.map((data, i) => (
                 <GithubProjectCard key={i} data={data} />
               ))}
             </div>
             <h2 className="text-center">Mes projets professionnel</h2>
-            <Separator className="hidden dark:block" />
+            <Separator />
             <div>
               {professionalProjects.map((data, i) => (
                 <ProfessionalProjectRow key={i} _key={i} data={data} />

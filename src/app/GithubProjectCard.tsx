@@ -18,7 +18,7 @@ export default function GithubProjectCard({
         className="hidden dark:block"
       />
       <img
-        src={`https://github-readme-stats.vercel.app/api/pin/?username=${data.org}&repo=${data.repo}&theme=light&bg_color=00000000&show_owner=true`}
+        src={`https://github-readme-stats.vercel.app/api/pin/?username=${data.org}&repo=${data.repo}&theme=light&bg_color=00000000&show_owner=true&hide_border=true`}
         alt="test"
         className="block dark:hidden"
       />
