@@ -14,7 +14,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 export default function Contact() {
   return (
     <ScrollArea className="w-screen h-full">
-      <div className="container mx-auto py-3 flex flex-col xl:flex-row gap-3">
+      <div className="container mx-auto py-3 flex flex-col xl:flex-row gap-3 animate-show opacity-0">
         <div className="basis-full">
           <h2 className="text-3xl my-3">Me contacter</h2>
           <Alert className="mb-2">

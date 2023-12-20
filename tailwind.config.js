@@ -64,7 +64,11 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        show: "show 0.5s ease-out 2s forwards",
+        "show": "show 0.4s ease-out forwards",
+        "show-500": "show 0.5s ease-out 0.5s forwards",
+        "show-1000": "show 0.5s ease-out 1s forwards",
+        "show-2000": "show 0.5s ease-out 2s forwards",
+        "show-2100": "show 0.5s ease-out 2.1s forwards",
         hideTitle: "hideTitle 2s ease-in-out 0s forwards",
         hideLogo: "hideLogo 2s ease-in-out 0s forwards",
       },

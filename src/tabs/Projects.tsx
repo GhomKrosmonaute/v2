@@ -75,19 +75,23 @@ export default function Projects({
           </div>
         ) : (
           <div className="container">
-            <h2 className="text-center">Mes principaux projets</h2>
-            <Separator />
-            <div className="flex flex-wrap justify-center xl:justify-between h-full w-full gap-3">
-              {githubFavoriteProjects.map((data, i) => (
-                <GithubProjectCard key={i} data={data} />
-              ))}
+            <div className="animate-show opacity-0">
+              <h2 className="text-center">Mes principaux projets</h2>
+              <Separator />
+              <div className="flex flex-wrap justify-center xl:justify-between h-full w-full gap-3">
+                {githubFavoriteProjects.map((data, i) => (
+                  <GithubProjectCard key={i} data={data} />
+                ))}
+              </div>
             </div>
-            <h2 className="text-center">Mes projets professionnel</h2>
-            <Separator />
-            <div>
-              {professionalProjects.map((data, i) => (
-                <ProfessionalProjectRow key={i} _key={i} data={data} />
-              ))}
+            <div className="animate-show opacity-0">
+              <h2 className="text-center">Mes projets professionnel</h2>
+              <Separator />
+              <div>
+                {professionalProjects.map((data, i) => (
+                  <ProfessionalProjectRow key={i} _key={i} data={data} />
+                ))}
+              </div>
             </div>
           </div>
         )}

@@ -120,7 +120,7 @@ body:not(.zap) canvas {
 }
 
 #redaction > div {
-  @apply xl:w-1/2 p-2;
+  @apply xl:w-1/2 p-2 animate-show opacity-0;
 }
 
 h2 {
@@ -151,7 +151,7 @@ h3 {
 @keyframes show {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(20%);
   }
   to {
     opacity: 1;
