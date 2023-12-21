@@ -23,15 +23,15 @@ export default function GithubProjectRow({
         </Avatar>
       </TableCell>
       <TableCell>
-        <div className="text-2xl overflow-x-hidden whitespace-nowrap">
+        <div className="text-2xl">
           <a
-            href={data.homepage ?? data.html_url}
+            href={data.homepage || data.html_url}
             target="_blank"
             rel="noreferrer"
+            className="block w-[250px] lg:w-[300px] text-ellipsis whitespace-nowrap overflow-x-hidden"
+            title={data.name}
           >
-            {data.name!.length > 20
-              ? data.name!.slice(0, 20) + "..."
-              : data.name}
+            {data.name}
           </a>
         </div>
       </TableCell>

@@ -22,7 +22,7 @@ export default function GithubProjectAccordion({
           <Avatar>
             <AvatarImage src={data.image} alt={data.name} />
           </Avatar>
-          <div className="text-2xl overflow-x-hidden whitespace-nowrap">
+          <div className="text-2xl text-start overflow-x-hidden text-ellipsis whitespace-nowrap w-[300px]">
             {data.name}
           </div>
         </div>

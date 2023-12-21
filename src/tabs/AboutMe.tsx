@@ -1,48 +1,125 @@
 import React from "react"
-// import { useScroll } from "@react-hooks-library/core"
+
+import { ArrowUp } from "lucide-react"
+
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { AlertTriangle, ChevronUp } from "lucide-react"
-import { Alert, AlertTitle } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 
-export default function AboutMe() {
+import Avatar from "@/app/Avatar"
+
+import navArrow from "@/assets/images/nav-arrow.png"
+import navArrowBlack from "@/assets/images/nav-arrow-black.png"
+
+export default function AboutMe({
+  headerEnabled,
+  setHeaderEnabled,
+}: {
+  headerEnabled: boolean
+  setHeaderEnabled: React.Dispatch<React.SetStateAction<boolean>>
+}) {
+  const [scrollDown, setScrollDown] = React.useState(false)
+
   const scrollArea = React.useRef<HTMLDivElement>(null)
   const button = React.useRef<HTMLButtonElement>(null)
 
-  // fixme: WTF why is this not working???
-  // useScroll(scrollArea, ({ scrollY: y }) => {
-  //   console.log(y)
-  //   if (y < 100) {
-  //     button.current?.classList.remove("opacity-0")
-  //   } else {
-  //     button.current?.classList.add("opacity-0")
-  //   }
-  // })
+  // hide the header
+  React.useEffect(() => {
+    setHeaderEnabled(false)
+  }, [setHeaderEnabled])
+
+  // scroll down
+  React.useEffect(() => {
+    const sa = scrollArea.current
+
+    if (sa)
+      sa.onscroll = () => {
+        if (sa.scrollTop ?? 0 > 300) {
+          setScrollDown(true)
+        } else {
+          setScrollDown(false)
+        }
+      }
+
+    return () => {
+      if (sa) sa.onscroll = null
+    }
+  }, [scrollArea])
+
+  // reveal on scroll
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0.2) {
+            const div = entry.target as HTMLDivElement
+            div.style.opacity = "1"
+            div.style.transform = "translateY(0)"
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    document
+      .querySelectorAll<HTMLDivElement>("#redaction > div")
+      .forEach((div) => {
+        observer.observe(div)
+      })
+  }, [])
 
   return (
     <>
+      <div
+        className={`hidden sm:block h-[100px] md:h-fit absolute top-[35px] md:top-0 right-[65px] md:right-0 transition-opacity duration-300 ${
+          headerEnabled || scrollDown ? "opacity-0" : ""
+        }`}
+      >
+        <img
+          src={navArrow}
+          alt=""
+          className="hidden dark:inline-block h-full"
+        />
+        <img
+          src={navArrowBlack}
+          alt=""
+          className="inline-block dark:hidden h-full"
+        />
+      </div>
       <Button
         ref={button}
-        className="absolute right-5 bottom-2 z-50"
+        className={`absolute right-5 bottom-2 z-50 transition-opacity duration-300 ${
+          scrollDown ? "" : "opacity-0"
+        }`}
         variant="outline"
         size="default"
         onClick={() => {
           document
-            .getElementById("redaction")
+            .getElementById("about-me")
             ?.scrollIntoView({ behavior: "smooth" })
         }}
       >
-        <ChevronUp className="h-4 w-4 mr-2" /> Remonter
+        <ArrowUp className="h-4 w-4 mr-2" /> Remonter
       </Button>
       <ScrollArea className="w-full h-full" ref={scrollArea}>
-        <div className="container py-3">
-          <Alert className="mb-2 w-fit">
-            <AlertTriangle className="h-4 w-4" />
-            <AlertTitle>Work in progress</AlertTitle>
-          </Alert>
+        <div id="about-me" className="container py-3">
+          <div
+            className={`flex justify-center opacity-0 h-0 transition-all duration-100 ${
+              headerEnabled ? "" : "opacity-100 h-auto"
+            }`}
+          >
+            <div className="flex flex-col items-center">
+              <Avatar
+                className={`w-28 h-28 inline-block scale-0 transition-all duration-200 ${
+                  headerEnabled ? "" : "scale-100"
+                }`}
+              />
+              <h1 className="text-4xl title">Ma biographie</h1>
+            </div>
+          </div>
           <div
             id="redaction"
-            className="block xl:flex flex-col flex-wrap xl:gap-3"
+            className="block xl:flex flex-col flex-wrap xl:gap-3 animate-show"
             style={{
               height: "3000px",
               // maxHeight: "min-content",
@@ -188,7 +265,7 @@ export default function AboutMe() {
               <h2>Mes premiers pas dans le monde du travail</h2>
               <p>
                 Tout a commencé lors de ma participation enthousiaste au Startup
-                Weekend à Perpignan, une expérience collaborative qui a été le
+                Weekend de Perpignan, une expérience collaborative qui a été le
                 catalyseur de changements majeurs. Aux côtés de mon ami Arnaud,
                 nous avons formé une équipe dynamique et avons travaillé
                 intensément sur une idée novatrice. Notre projet, qui a fini par

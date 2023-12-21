@@ -8,9 +8,9 @@ import {
 
 import pp from "@assets/images/profile-picture.png"
 
-export default function Avatar() {
+export default function Avatar({ className }: { className?: string }) {
   return (
-    <AvatarUI>
+    <AvatarUI className={className}>
       <AvatarImage src={pp} alt="@GhomKrosmonaute" />
       <AvatarFallback>Ghom</AvatarFallback>
     </AvatarUI>

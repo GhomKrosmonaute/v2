@@ -102,12 +102,7 @@ body:not(.zap) canvas {
 }
 
 #title {
-  font-family: 'Anton', sans-serif;
-  text-shadow:
-    rgba(124,58,237) 0 -4px 0,
-    rgba(0, 0, 0) 0 4px 0,
-    2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  @apply title;
   transform: translate(-50%, -50%);
 }
 
@@ -120,7 +115,7 @@ body:not(.zap) canvas {
 }
 
 #redaction > div {
-  @apply xl:w-1/2 p-2 animate-show opacity-0;
+  @apply xl:w-1/2 p-2 scroll-reveal;
 }
 
 h2 {
@@ -146,6 +141,27 @@ h3 {
 .hide-header .content {
   top: -130px !important;
   height: 100svh !important;
+}
+
+.title {
+  font-family: 'Anton', sans-serif;
+  color: #fff;
+  text-shadow:
+    rgba(124,58,237) 0 -4px 0,
+    rgba(0, 0, 0) 0 4px 0,
+    2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+    1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  pointer-events: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 @keyframes show {
