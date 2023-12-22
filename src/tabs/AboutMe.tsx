@@ -122,7 +122,7 @@ export default function AboutMe({
             id="redaction"
             className="block xl:flex flex-col flex-wrap xl:gap-3 animate-show"
             style={{
-              height: "3000px",
+              height: "3200px",
               // maxHeight: "min-content",
             }}
           >
