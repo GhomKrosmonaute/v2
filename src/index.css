@@ -118,6 +118,40 @@ body:not(.zap) canvas {
   @apply xl:w-1/2 p-2 scroll-reveal;
 }
 
+#redaction a {
+  @apply text-violet-400 hover:text-violet-200;
+}
+
+#redaction a:after {
+  content: '↗️';
+}
+
+#redaction li {
+  @apply ml-5;
+}
+
+#redaction li:before {
+  content: '┞';
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  @apply text-primary;
+}
+
+#redaction li:first-child:before {
+  content: '┎';
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+#redaction li:last-child:before {
+  content: '┖';
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
 h2 {
   @apply text-3xl mb-2 mt-7;
 }
