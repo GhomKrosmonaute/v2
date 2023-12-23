@@ -10,7 +10,7 @@ import pp from "@assets/images/profile-picture.png"
 
 export default function Avatar({ className }: { className?: string }) {
   return (
-    <AvatarUI className={className}>
+    <AvatarUI className={`box-shad0w ${className}`}>
       <AvatarImage src={pp} alt="@GhomKrosmonaute" />
       <AvatarFallback>Ghom</AvatarFallback>
     </AvatarUI>

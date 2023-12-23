@@ -1,5 +1,7 @@
 import React from "react"
 
+import * as utils from "@/lib/utils"
+
 import { ArrowUp, AlertCircle } from "lucide-react"
 
 import { Alert, AlertTitle } from "@/components/ui/alert"
@@ -7,9 +9,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button"
 
 import Avatar from "@/app/Avatar"
-
-import navArrow from "@/assets/images/nav-arrow.png"
-import navArrowBlack from "@/assets/images/nav-arrow-black.png"
+import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
 
 export default function AboutMe({
   headerEnabled,
@@ -18,33 +18,14 @@ export default function AboutMe({
   headerEnabled: boolean
   setHeaderEnabled: React.Dispatch<React.SetStateAction<boolean>>
 }) {
-  const [scrollDown, setScrollDown] = React.useState(false)
+  const { scrollDown, scrollAreaRef } = utils.useScroll()
 
-  const scrollArea = React.useRef<HTMLDivElement>(null)
   const button = React.useRef<HTMLButtonElement>(null)
 
   // hide the header
   React.useEffect(() => {
     setHeaderEnabled(false)
   }, [setHeaderEnabled])
-
-  // scroll down
-  React.useEffect(() => {
-    const sa = scrollArea.current
-
-    if (sa)
-      sa.onscroll = () => {
-        if (sa.scrollTop ?? 0 > 300) {
-          setScrollDown(true)
-        } else {
-          setScrollDown(false)
-        }
-      }
-
-    return () => {
-      if (sa) sa.onscroll = null
-    }
-  }, [scrollArea])
 
   // reveal on scroll
   React.useEffect(() => {
@@ -71,22 +52,10 @@ export default function AboutMe({
 
   return (
     <>
-      <div
-        className={`hidden sm:block h-[100px] md:h-fit absolute top-[35px] md:top-0 right-[65px] md:right-0 transition-opacity duration-300 ${
-          headerEnabled || scrollDown ? "opacity-0" : ""
-        }`}
-      >
-        <img
-          src={navArrow}
-          alt=""
-          className="hidden dark:inline-block h-full"
-        />
-        <img
-          src={navArrowBlack}
-          alt=""
-          className="inline-block dark:hidden h-full"
-        />
-      </div>
+      <HeaderArrowIndicator
+        headerEnabled={headerEnabled}
+        scrollDown={scrollDown}
+      />
       <Button
         ref={button}
         className={`absolute right-5 bottom-2 z-50 transition-opacity duration-300 ${
@@ -102,20 +71,20 @@ export default function AboutMe({
       >
         <ArrowUp className="h-4 w-4 mr-2" /> Remonter
       </Button>
-      <ScrollArea className="w-full h-full" ref={scrollArea}>
+      <ScrollArea className="w-full h-full" ref={scrollAreaRef}>
         <div id="about-me" className="container py-3">
           <div
-            className={`flex justify-center opacity-0 h-0 transition-all duration-100 ${
+            className={`flex justify-center opacity-0 h-0 transition-all duration-200 ${
               headerEnabled ? "" : "opacity-100 h-auto"
             }`}
           >
-            <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-1">
               <Avatar
                 className={`w-28 h-28 inline-block scale-0 transition-all duration-200 ${
                   headerEnabled ? "" : "scale-100"
                 }`}
               />
-              <h1 className="text-4xl title">Ma Bio</h1>
+              <h2 className="text-4xl title mt-2">Ma Bio</h2>
             </div>
           </div>
           <div
@@ -127,7 +96,7 @@ export default function AboutMe({
             }}
           >
             <div>
-              <h2>A propos de moi</h2>
+              <h3>A propos de moi</h3>
               <p>
                 Je suis Camille Abella, plus connu sous le pseudo Ghom, un
                 développeur web amateur passionné basé à Perpignan, France. Mon
@@ -161,7 +130,7 @@ export default function AboutMe({
                 contacter pour discuter de la manière dont nous pourrions
                 travailler ensemble pour concrétiser votre vision en ligne.
               </p>
-              <Alert>
+              <Alert className="shad0w">
                 <AlertCircle className="h-5 w-5" />
                 <AlertTitle>
                   Pour m'engager, rendez-vous sur mon profile&nbsp;
@@ -176,7 +145,7 @@ export default function AboutMe({
               </Alert>
             </div>
             <div>
-              <h2>Mon parcours scolaire</h2>
+              <h3>Mon parcours scolaire</h3>
               <p>
                 Mon parcours scolaire a été tout sauf classique, marqué par une
                 agilité d'esprit et une quête constante de créativité. Tout se
@@ -217,7 +186,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Les jeux vidéos</h2>
+              <h3>Les jeux vidéos</h3>
               <p>
                 Les jeux vidéo ont été une source inépuisable de passion et
                 d'inspiration tout au long de ma vie, jouant un rôle déterminant
@@ -336,7 +305,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Ma formation</h2>
+              <h3>Ma formation</h3>
               <p>
                 Ma vie a pris un tournant significatif lorsqu'une étape cruciale
                 m'a conduit à quitter ma période de solitude. Je me suis engagé
@@ -363,7 +332,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Mes premiers pas dans le monde du travail</h2>
+              <h3>Mes premiers pas dans le monde du travail</h3>
               <p>
                 Tout a commencé lors de ma participation enthousiaste au&nbsp;
                 <a
@@ -423,7 +392,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>PlayCurious</h2>
+              <h3>PlayCurious</h3>
               <p>
                 Quand j'ai rejoint&nbsp;
                 <a
@@ -450,7 +419,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Mes premiers gros projets</h2>
+              <h3>Mes premiers gros projets</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
                 delectus doloremque dolores fuga maiores modi molestiae nam,
@@ -463,7 +432,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Les Laboratoires JS</h2>
+              <h3>Les Laboratoires JS</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
                 delectus doloremque dolores fuga maiores modi molestiae nam,
@@ -476,7 +445,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Mon projet de boite de jeu vidéo</h2>
+              <h3>Mon projet de boite de jeu vidéo</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
                 delectus doloremque dolores fuga maiores modi molestiae nam,
@@ -489,7 +458,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Mon but dans la vie</h2>
+              <h3>Mon but dans la vie</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
                 delectus doloremque dolores fuga maiores modi molestiae nam,
@@ -502,7 +471,7 @@ export default function AboutMe({
               </p>
             </div>
             <div>
-              <h2>Ma philosophie</h2>
+              <h3>Ma philosophie</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
                 voluptatum, quia, voluptatem, quibusdam voluptates voluptate

@@ -11,7 +11,7 @@ export default function ProfessionalProjectRow({
 }) {
   return (
     <div className="my-3">
-      <div className="flex justify-between items-end">
+      <div className="flex justify-between items-end mb-3">
         <h3>{data.name}</h3>
         <OpenInNewTab href={data.url} />
       </div>
@@ -31,7 +31,7 @@ export default function ProfessionalProjectRow({
         <img
           src={`/professional-projects/${data.image}`}
           alt={data.image}
-          className="object-cover md:max-w-[min(50vw,50%)] p-3"
+          className="object-cover md:max-w-[min(50vw,50%)] shad0w"
         />
       </div>
     </div>

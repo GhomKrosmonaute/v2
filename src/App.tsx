@@ -29,6 +29,9 @@ export default function App() {
       disableTransitionOnChange
     >
       <div id="app" className={headerEnabled ? "" : "hide-header"}>
+        <h1 className="opacity-0 h-0">
+          Camille Abella aka GhomKrosmonaute - Portfolio
+        </h1>
         <GithubStats
           className="header hidden xl:inline-block z-10 fixed top-0 left-0"
           rdm={rdm}
@@ -44,11 +47,11 @@ export default function App() {
           defaultValue="projects"
           className="fixed top-[130px] w-screen animate-show-2000 opacity-0"
         >
-          <div className="header flex justify-center">
-            <TabsList>
-              <TabsTrigger value="about">A propos</TabsTrigger>
+          <div id="tabs" className="header flex justify-center">
+            <TabsList className="shad0w">
               <TabsTrigger value="projects">Projets</TabsTrigger>
-              <TabsTrigger value="pricing">Tarifs</TabsTrigger>
+              <TabsTrigger value="about">Ma Bio</TabsTrigger>
+              {/*<TabsTrigger value="pricing">Tarifs</TabsTrigger>*/}
               <TabsTrigger value="contact">Contact</TabsTrigger>
             </TabsList>
           </div>
@@ -60,13 +63,22 @@ export default function App() {
               />
             </TabsContent>
             <TabsContent value="projects">
-              <Projects headerEnabled={headerEnabled} />
+              <Projects
+                headerEnabled={headerEnabled}
+                setHeaderEnabled={setHeaderEnabled}
+              />
             </TabsContent>
             <TabsContent value="pricing">
-              <Pricing />
+              <Pricing
+                headerEnabled={headerEnabled}
+                setHeaderEnabled={setHeaderEnabled}
+              />
             </TabsContent>
             <TabsContent value="contact">
-              <Contact />
+              <Contact
+                headerEnabled={headerEnabled}
+                setHeaderEnabled={setHeaderEnabled}
+              />
             </TabsContent>
           </div>
         </Tabs>

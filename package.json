@@ -55,7 +55,7 @@
     "eject": "craco eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\" generate.mjs",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md,css}\" generate.mjs",
     "generate": "node generate.mjs",
     "share": "cloudflared tunnel --url http://localhost:3000"
   },

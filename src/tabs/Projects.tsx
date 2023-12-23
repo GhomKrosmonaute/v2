@@ -1,5 +1,7 @@
 import React from "react"
 
+import * as utils from "@/lib/utils"
+
 import { Table, TableBody } from "@/components/ui/table"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Accordion } from "@/components/ui/accordion"
@@ -15,6 +17,7 @@ import GithubProjectAccordionSkeleton from "@/app/GithubProjectAccordionSkeleton
 import githubProjects from "@/data/githubProjects.json"
 import githubFavoriteProjects from "@/data/githubFavoriteProjects.json"
 import professionalProjects from "@/data/professionalProjects.json"
+import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
 
 const GithubProjectRow = React.lazy(() => import("@/app/GithubProjectRow"))
 const GithubProjectCard = React.lazy(() => import("@/app/GithubProjectCard"))
@@ -24,13 +27,25 @@ const GithubProjectAccordion = React.lazy(
 
 export default function Projects({
   headerEnabled,
+  setHeaderEnabled,
 }: {
   headerEnabled: boolean
+  setHeaderEnabled: React.Dispatch<React.SetStateAction<boolean>>
 }) {
+  const { scrollDown, scrollAreaRef } = utils.useScroll()
   const [showAll, setShowAll] = React.useState(false)
+
+  // show the header
+  React.useEffect(() => {
+    setHeaderEnabled(true)
+  }, [setHeaderEnabled])
 
   return (
     <>
+      <HeaderArrowIndicator
+        headerEnabled={headerEnabled}
+        scrollDown={scrollDown}
+      />
       <div
         className={
           "h-[30px] flex items-center px-3 " +
@@ -42,7 +57,7 @@ export default function Projects({
           <Label htmlFor="showAll">Tout afficher</Label>
         </div>
       </div>
-      <ScrollArea className="p-3 h-[calc(100%-30px)]">
+      <ScrollArea className="p-3 h-[calc(100%-30px)]" ref={scrollAreaRef}>
         {showAll ? (
           <div className="container">
             <div className="hidden md:block">
