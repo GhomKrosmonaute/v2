@@ -7,8 +7,8 @@ import skills from "@/data/skills.json"
 
 import { Download } from "lucide-react"
 
-import { buttonVariants } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { buttonVariants } from "@/components/ui/button"
 
 import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
 import SkillRow from "@/app/SkillRow"
@@ -41,7 +41,7 @@ export default function Skills({
       />
       <ScrollArea className="w-full h-full" ref={scrollAreaRef}>
         <h2 className="title text-center mb-[50px]">CV & Compétences</h2>
-        <div className="container flex flex-col md:flex-row animate-show gap-3">
+        <div className="container flex flex-col md:flex-row animate-show gap-3 pb-7">
           <div className="md:w-1/2 object-contain flex flex-col justify-center">
             <img
               src={cv}
@@ -50,7 +50,7 @@ export default function Skills({
             />
           </div>
           <a
-            className={`self-center md:hidden ${buttonVariants()}`}
+            className={`self-center my-5 md:hidden ${buttonVariants()}`}
             download="CV_Camille_ABELLA.pdf"
             href={hrefPDF}
           >
@@ -71,7 +71,7 @@ export default function Skills({
               </div>
             ))}
             <a
-              className={`self-center hidden md:flex mt-5 ${buttonVariants()}`}
+              className={`self-center hidden md:flex my-5 ${buttonVariants()}`}
               download="CV_Camille_ABELLA.pdf"
               href={hrefPDF}
             >
