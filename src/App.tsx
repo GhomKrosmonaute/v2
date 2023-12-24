@@ -14,6 +14,7 @@ import Background from "@/app/Background"
 import Title from "@/app/Title"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Skills from "@/tabs/Skills"
 
 let rdm = Math.random()
 
@@ -52,6 +53,7 @@ export default function App() {
               <TabsTrigger value="projects">Projets</TabsTrigger>
               <TabsTrigger value="about">Ma Bio</TabsTrigger>
               {/*<TabsTrigger value="pricing">Tarifs</TabsTrigger>*/}
+              <TabsTrigger value="skills">Compétences</TabsTrigger>
               <TabsTrigger value="contact">Contact</TabsTrigger>
             </TabsList>
           </div>
@@ -70,6 +72,12 @@ export default function App() {
             </TabsContent>
             <TabsContent value="pricing">
               <Pricing
+                headerEnabled={headerEnabled}
+                setHeaderEnabled={setHeaderEnabled}
+              />
+            </TabsContent>
+            <TabsContent value="skills">
+              <Skills
                 headerEnabled={headerEnabled}
                 setHeaderEnabled={setHeaderEnabled}
               />

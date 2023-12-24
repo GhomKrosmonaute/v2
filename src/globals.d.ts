@@ -21,3 +21,8 @@ interface ProfessionalProjectRowData {
   image: string
   url: string
 }
+
+interface SkillRowData {
+  level: "Expert" | "Avancé" | "Débutant" | "Refuse"
+  name: string
+}

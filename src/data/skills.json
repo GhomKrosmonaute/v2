@@ -1,0 +1,5 @@
+{
+  "Expert": ["NodeJS", "TypeScript", "discord.js", "pixi.js", "Orienté Objet"],
+  "Avancé": ["Sass", "React", "SQL", "Git", "Express", "next.js", "Strapi"],
+  "Débutant": ["C#", "Java", "socket.io"]
+}

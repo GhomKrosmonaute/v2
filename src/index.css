@@ -190,7 +190,7 @@ h4 {
 
 .hide-header .content {
   top: -70px !important;
-  height: calc(100svh - 60px) !important;
+  height: calc(100svh - 75px) !important;
 }
 
 .title {
