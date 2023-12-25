@@ -9,20 +9,24 @@ import { Separator } from "@/components/ui/separator"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 
-import ProfessionalProjectRow from "@/app/ProfessionalProjectRow"
-import GithubProjectRowSkeleton from "@/app/GithubProjectRowSkeleton"
-import GithubProjectCardSkeleton from "@/app/GithubProjectCardSkeleton"
-import GithubProjectAccordionSkeleton from "@/app/GithubProjectAccordionSkeleton"
+import HeaderArrowIndicator from "@/components/parts/HeaderArrowIndicator"
+import ProfessionalProjectRow from "@/components/parts/ProfessionalProjectRow"
+import GithubProjectRowSkeleton from "@/components/parts/GithubProjectRowSkeleton"
+import GithubProjectCardSkeleton from "@/components/parts/GithubProjectCardSkeleton"
+import GithubProjectAccordionSkeleton from "@/components/parts/GithubProjectAccordionSkeleton"
 
 import githubProjects from "@/data/githubProjects.json"
 import githubFavoriteProjects from "@/data/githubFavoriteProjects.json"
 import professionalProjects from "@/data/professionalProjects.json"
-import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
 
-const GithubProjectRow = React.lazy(() => import("@/app/GithubProjectRow"))
-const GithubProjectCard = React.lazy(() => import("@/app/GithubProjectCard"))
+const GithubProjectRow = React.lazy(
+  () => import("@/components/parts/GithubProjectRow")
+)
+const GithubProjectCard = React.lazy(
+  () => import("@/components/parts/GithubProjectCard")
+)
 const GithubProjectAccordion = React.lazy(
-  () => import("@/app/GithubProjectAccordion")
+  () => import("@/components/parts/GithubProjectAccordion")
 )
 
 export default function Projects({

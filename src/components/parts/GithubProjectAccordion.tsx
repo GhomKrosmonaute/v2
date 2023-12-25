@@ -6,9 +6,9 @@ import {
 } from "@/components/ui/accordion"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 
-import GithubProjectStars from "@/app/GithubProjectStars"
-import GithubProjectForks from "@/app/GithubProjectForks"
-import GithubProjectIssues from "@/app/GithubProjectIssues"
+import GithubProjectStars from "@/components/parts/GithubProjectStars"
+import GithubProjectForks from "@/components/parts/GithubProjectForks"
+import GithubProjectIssues from "@/components/parts/GithubProjectIssues"
 
 export default function GithubProjectAccordion({
   data,

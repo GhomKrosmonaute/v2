@@ -3,8 +3,10 @@ import React from "react"
 // import { useQuery } from "@tanstack/react-query"
 
 import { ScrollArea } from "@/components/ui/scroll-area"
+
 import * as utils from "@/lib/utils"
-import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
+
+import HeaderArrowIndicator from "@/components/parts/HeaderArrowIndicator"
 
 export default function Pricing({
   headerEnabled,

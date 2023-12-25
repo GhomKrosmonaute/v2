@@ -1,6 +1,6 @@
 import React from "react"
 
-import OpenInNewTab from "@/app/OpenInNewTab"
+import OpenInNewTab from "@/components/parts/OpenInNewTab"
 
 export default function ProfessionalProjectRow({
   data,

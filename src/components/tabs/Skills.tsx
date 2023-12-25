@@ -2,7 +2,7 @@ import React from "react"
 
 import * as utils from "@/lib/utils"
 
-import cv from "@/assets/images/CV.png"
+import cv from "@assets/images/CV.png"
 import skills from "@/data/skills.json"
 
 import { Download } from "lucide-react"
@@ -10,12 +10,10 @@ import { Download } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { buttonVariants } from "@/components/ui/button"
 
-import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
-import SkillRow from "@/app/SkillRow"
+import HeaderArrowIndicator from "@/components/parts/HeaderArrowIndicator"
+import SkillRow from "@/components/parts/SkillRow"
 
-/*
- * Ici, nous retrouverons les compétences de l'utilisateur, avec des gauges représentant le niveau de qualification, et son CV
- */
+const hrefPDF = "/downloads/Camille_ABELLA_CV.pdf"
 
 export default function Skills({
   headerEnabled,
@@ -25,8 +23,6 @@ export default function Skills({
   setHeaderEnabled: React.Dispatch<React.SetStateAction<boolean>>
 }) {
   const { scrollDown, scrollAreaRef } = utils.useScroll()
-
-  const hrefPDF = "/downloads/Camille_ABELLA_CV.pdf"
 
   // hide the header
   React.useEffect(() => {

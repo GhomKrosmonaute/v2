@@ -26,3 +26,9 @@ interface SkillRowData {
   level: "Expert" | "Avancé" | "Débutant" | "Refuse"
   name: string
 }
+
+interface DemoCardData {
+  name: string
+  description: string
+  url: string
+}

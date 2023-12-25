@@ -1,4 +1,9 @@
 import React from "react"
+
+import * as utils from "@/lib/utils"
+
+import { AlertTriangle, Mail } from "lucide-react"
+
 import {
   Card,
   CardHeader,
@@ -6,12 +11,11 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card"
-import { AlertTriangle, Mail } from "lucide-react"
-import ContactLine from "@/app/ContactLine"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import * as utils from "@/lib/utils"
-// import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+
+import ContactLine from "@/components/parts/ContactLine"
+// import HeaderArrowIndicator from "@/components/parts/HeaderArrowIndicator"
 
 export default function Contact({
   headerEnabled,

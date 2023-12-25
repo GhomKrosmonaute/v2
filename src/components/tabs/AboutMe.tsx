@@ -8,8 +8,8 @@ import { Alert, AlertTitle } from "@/components/ui/alert"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button"
 
-import Avatar from "@/app/Avatar"
-import HeaderArrowIndicator from "@/app/HeaderArrowIndicator"
+import Avatar from "@/components/parts/Avatar"
+import HeaderArrowIndicator from "@/components/parts/HeaderArrowIndicator"
 
 export default function AboutMe({
   headerEnabled,

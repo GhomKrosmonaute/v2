@@ -1,20 +1,21 @@
 import React from "react"
 
-import Projects from "@/tabs/Projects"
-import AboutMe from "@/tabs/AboutMe"
-import Pricing from "@/tabs/Pricing"
-import Contact from "@/tabs/Contact"
+import Projects from "@/components/tabs/Projects"
+import AboutMe from "@/components/tabs/AboutMe"
+import Pricing from "@/components/tabs/Pricing"
+import Contact from "@/components/tabs/Contact"
 
-import ThemeProvider from "@/app/ThemeProvider"
-import HeaderToggle from "@/app/HeaderToggle"
-import ThemeToggle from "@/app/ThemeToggle"
-import GithubStats from "@/app/GithubStats"
-import BoltToggle from "@/app/BoltToggle"
-import Background from "@/app/Background"
-import Title from "@/app/Title"
+import ThemeProvider from "@/components/parts/ThemeProvider"
+import HeaderToggle from "@/components/parts/HeaderToggle"
+import ThemeToggle from "@/components/parts/ThemeToggle"
+import GithubStats from "@/components/parts/GithubStats"
+import BoltToggle from "@/components/parts/BoltToggle"
+import Background from "@/components/parts/Background"
+import Title from "@/components/parts/Title"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Skills from "@/tabs/Skills"
+import Skills from "@/components/tabs/Skills"
+import Demo from "@/components/tabs/Demo"
 
 let rdm = Math.random()
 
@@ -55,6 +56,9 @@ export default function App() {
               {/*<TabsTrigger value="pricing">Tarifs</TabsTrigger>*/}
               <TabsTrigger value="skills">Compétences</TabsTrigger>
               <TabsTrigger value="contact">Contact</TabsTrigger>
+              <TabsTrigger value="demo" className="hidden lg:inline-block">
+                Démos
+              </TabsTrigger>
             </TabsList>
           </div>
           <div className="content fixed left-0 top-[50px] w-screen h-[calc(100svh-190px)] animate-show-2100 opacity-0">
@@ -84,6 +88,12 @@ export default function App() {
             </TabsContent>
             <TabsContent value="contact">
               <Contact
+                headerEnabled={headerEnabled}
+                setHeaderEnabled={setHeaderEnabled}
+              />
+            </TabsContent>
+            <TabsContent value="demo" className="hidden lg:inline-block">
+              <Demo
                 headerEnabled={headerEnabled}
                 setHeaderEnabled={setHeaderEnabled}
               />

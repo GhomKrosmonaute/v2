@@ -5,10 +5,10 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
-import GithubProjectStars from "@/app/GithubProjectStars"
-import GithubProjectForks from "@/app/GithubProjectForks"
-import GithubProjectIssues from "@/app/GithubProjectIssues"
-import OpenInNewTab from "@/app/OpenInNewTab"
+import GithubProjectStars from "@/components/parts/GithubProjectStars"
+import GithubProjectForks from "@/components/parts/GithubProjectForks"
+import GithubProjectIssues from "@/components/parts/GithubProjectIssues"
+import OpenInNewTab from "@/components/parts/OpenInNewTab"
 
 export default function GithubProjectRow({
   data,

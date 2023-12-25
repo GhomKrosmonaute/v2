@@ -1,5 +1,5 @@
 import React from "react"
-import Delay from "@/app/Delay"
+import Delay from "@/components/parts/Delay"
 
 export default function GithubStats({
   className,
