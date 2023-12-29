@@ -1,9 +1,15 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
 
-export default function OpenInNewTab({ href }: { href: string }) {
+export default function OpenInNewTab({
+  href,
+  className,
+}: {
+  href: string
+  className?: string
+}) {
   return (
-    <Button asChild variant="outline">
+    <Button asChild variant="outline" className={className}>
       <a href={href} target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"

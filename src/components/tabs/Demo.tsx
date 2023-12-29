@@ -26,7 +26,9 @@ export default function Demo({
     <>
       <Carousel
         className="left-[50vw] -translate-x-1/2 w-[90vw] h-[90svh]"
-        opts={{}}
+        opts={{
+          loop: true,
+        }}
       >
         <CarouselContent className="h-full">
           {demos.map((demo, i) => (

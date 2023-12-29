@@ -226,7 +226,7 @@ input.shad0w {
   @apply box-shad0w;
 }
 
-.text-shad0w {
+.dark .text-shad0w {
   font-family: "Anton", sans-serif;
   @apply text-gray-50;
   text-shadow:
@@ -242,7 +242,7 @@ input.shad0w {
     -1px 1px #000;
 }
 
-.box-shad0w {
+.dark .box-shad0w {
   box-shadow:
     rgba(124, 58, 237) 0 -4px 0,
     rgba(0, 0, 0) 0 4px 0,
@@ -254,6 +254,36 @@ input.shad0w {
     -1px -1px #000,
     1px -1px #000,
     -1px 1px #000;
+}
+
+.text-shad0w {
+  font-family: "Anton", sans-serif;
+  @apply text-gray-50;
+  text-shadow:
+    rgba(124, 58, 237) 0 -4px 0,
+    rgba(0, 0, 0, 0.5) 0 4px 0,
+    2px 0 rgba(0, 0, 0, 0.5),
+    -2px 0 rgba(0, 0, 0, 0.5),
+    0 2px rgba(0, 0, 0, 0.5),
+    0 -2px rgba(0, 0, 0, 0.5),
+    1px 1px rgba(0, 0, 0, 0.5),
+    -1px -1px rgba(0, 0, 0, 0.5),
+    1px -1px rgba(0, 0, 0, 0.5),
+    -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.box-shad0w {
+  box-shadow:
+    rgba(124, 58, 237) 0 -4px 0,
+    rgba(0, 0, 0, 0.5) 0 4px 0,
+    2px 0 rgba(0, 0, 0, 0.5),
+    -2px 0 rgba(0, 0, 0, 0.5),
+    0 2px rgba(0, 0, 0, 0.5),
+    0 -2px rgba(0, 0, 0, 0.5),
+    1px 1px rgba(0, 0, 0, 0.5),
+    -1px -1px rgba(0, 0, 0, 0.5),
+    1px -1px rgba(0, 0, 0, 0.5),
+    -1px 1px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes show {

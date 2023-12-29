@@ -27,11 +27,6 @@ export default function DemoCard({ data }: { data: DemoCardData }) {
 
   return (
     <CarouselItem>
-      <div className="flex justify-center items-baseline gap-3">
-        <h2 className="shad0w">{data.name}</h2>
-        <p>{data.description}</p>
-        <OpenInNewTab href={data.url} />
-      </div>
       <div className="relative w-full h-full">
         <iframe
           src={data.url}
@@ -51,6 +46,16 @@ export default function DemoCard({ data }: { data: DemoCardData }) {
               }
             }}
           >
+            <div className="absolute left-0 top-0 pl-5">
+              <div className="flex items-baseline">
+                <h2 className="shad0w text-5xl">{data.name}</h2>
+                <OpenInNewTab
+                  className="-translate-y-2 translate-x-[15px]"
+                  href={data.url}
+                />
+              </div>
+              <p className="text-2xl">{data.description}</p>
+            </div>
             <div className="flex flex-col items-center">
               <Play className="w-[50px] h-[50px]" />
               <p className="text-center mt-2 text-2xl">
