@@ -128,18 +128,18 @@ body:not(.zap) canvas {
 }
 
 #redaction a {
-  @apply text-violet-400 hover:text-violet-200;
+  @apply dark:text-violet-400 dark:hover:text-violet-200 text-violet-500 hover:text-violet-950;
 }
 
 #redaction a:after {
   content: "↗️";
 }
 
-#redaction li {
+.list li {
   @apply ml-5;
 }
 
-#redaction li:before {
+.list li:before {
   content: "┞";
   display: inline-block;
   width: 1em;
@@ -147,14 +147,14 @@ body:not(.zap) canvas {
   @apply text-primary;
 }
 
-#redaction li:first-child:before {
+.list li:first-child:before {
   content: "┎";
   display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
 
-#redaction li:last-child:before {
+.list li:last-child:before {
   content: "┖";
   display: inline-block;
   width: 1em;
@@ -284,6 +284,20 @@ input.shad0w {
     -1px -1px rgba(0, 0, 0, 0.5),
     1px -1px rgba(0, 0, 0, 0.5),
     -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#app {
+  pointer-events: none;
+  animation: enable-pointer 0.5s ease-in-out 2s forwards;
+}
+
+@keyframes enable-pointer {
+  0% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: all;
+  }
 }
 
 @keyframes show {

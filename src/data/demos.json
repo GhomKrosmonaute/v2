@@ -23,5 +23,15 @@
     "name": "My Anime List",
     "url": "https://ghomkrosmonaute.github.io/MyAnimeList/",
     "description": "Site front-end qui contient mes animes favoris créé en vanilla JavaScript"
+  },
+  {
+    "name": "Stateless Password Manager",
+    "url": "https://ghomkrosmonaute.github.io/get-my-hash/",
+    "description": "Site front-end qui permet de générer des mots de passe uniques créé en vanilla JavaScript"
+  },
+  {
+    "name": "Human Typing Simulator",
+    "url": "https://ghomkrosmonaute.github.io/Typing.js/",
+    "description": "Lib pour simuler la frappe d'un humain sur un clavier dans un élément HTML en JavaScript"
   }
 ]

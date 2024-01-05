@@ -18,5 +18,16 @@
     ],
     "image": "EdenRed-Boat-Quest.png",
     "url": "https://playcurious.games/our-games/edenred-boat-quest/"
+  },
+  {
+    "name": "RedMetrics",
+    "description": [
+      "RedMetrics est un outil d'analyse de données de jeu vidéo. Il permet aux développeurs de jeux de collecter des données sur le comportement des joueurs et de les analyser pour améliorer leur jeu.",
+      "Ce projet est Open Source et a été développé en TypeScript. Le backend utilise ExpressJS, KnexJS et PostgreSQL. Le frontend est développé avec ReactJS et TailwindCSS.",
+      "Nous avons décidé d'utiliser Docker pour le déploiement de l'application, afin que tout le monde puisse facilement l'installer et la déployer sur ses propres serveurs.",
+      "J'ai travaillé sur le développement de l'API et de la base de données, ainsi que sur le développement de l'interface utilisateur."
+    ],
+    "image": "RedMetrics.png",
+    "url": "https://github.com/play-curious/RedMetrics2/"
   }
 ]

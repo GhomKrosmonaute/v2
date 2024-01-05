@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 
 import Avatar from "@/components/parts/Avatar"
 import HeaderArrowIndicator from "@/components/parts/HeaderArrowIndicator"
+import List from "@/components/parts/List"
 
 export default function AboutMe({
   headerEnabled,
@@ -205,7 +206,7 @@ export default function AboutMe({
                 de titres emblématiques qui ont laissé une empreinte indélébile
                 sur mon vécu. En voici quelques uns:
               </p>
-              <ul>
+              <List>
                 <li>
                   <strong>Dofus</strong> - Premier MMORPG français, gameplay
                   tactique
@@ -240,7 +241,7 @@ export default function AboutMe({
                 </li>
                 <li>
                   <strong>Call of Duty: WaW</strong> - FPS, premier mode zombie,
-                  adventure historique
+                  aventure historique
                 </li>
                 <li>
                   <strong>Minitroopers</strong> - Combat automatique, équipe
@@ -256,7 +257,7 @@ export default function AboutMe({
                 <li>
                   <strong>Mario Kart</strong> - Jeu de course type arcade
                 </li>
-              </ul>
+              </List>
               <p>
                 Ah, les souvenirs d'enfance sont souvent teintés d'une touche
                 espiègle. Il y a une anecdote qui résonne particulièrement dans
@@ -276,7 +277,7 @@ export default function AboutMe({
                 me suis notamment intéressé à certains titres innovants tels
                 que:
               </p>
-              <ul>
+              <List>
                 <li>
                   <strong>Inscryption</strong> - Mix entre jeu de carte, jeu
                   d'enquête et Rogue-like
@@ -297,7 +298,7 @@ export default function AboutMe({
                   <strong>Slay the Spire</strong> - Jeu de carte stratégique
                   type Rogue like à choix de synergie
                 </li>
-              </ul>
+              </List>
               <p>
                 Je me lance bientôt dans le développement de mon propre jeu
                 vidéo, je m'inspirerais bien entendu de tous ces jeux qui m'ont
