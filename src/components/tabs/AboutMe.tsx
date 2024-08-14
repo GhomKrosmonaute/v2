@@ -259,19 +259,6 @@ export default function AboutMe({
                 </li>
               </List>
               <p>
-                Ah, les souvenirs d'enfance sont souvent teintés d'une touche
-                espiègle. Il y a une anecdote qui résonne particulièrement dans
-                ma mémoire. Lorsque j'étais gosse, un ami généreux m'avait prêté
-                le jeu "Advance Wars" sur Nintendo DS. C'était une immersion
-                captivante dans le monde de la stratégie militaire, et je me
-                suis tellement plongé dans l'univers du jeu que, je dois
-                l'avouer avec un sourire complice, je n'ai jamais trouvé le
-                chemin du retour pour rendre le jeu à son propriétaire. Un petit
-                acte qui a peut-être forgé ma passion pour le genre tactical.
-                Désolé, cher ami, si tu lis ceci. C'était une aventure
-                mémorable! 😄
-              </p>
-              <p>
                 Aujourd'hui encore, je continue d'être passionné par tous ces
                 nouveaux types de jeux qui sortent chaque mois. Dernièrement je
                 me suis notamment intéressé à certains titres innovants tels

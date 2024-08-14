@@ -4,9 +4,9 @@
     "stargazers_count": 2,
     "forks": 0,
     "language": "TypeScript",
-    "description": "My version of play-curious/booyah",
+    "description": "My version of play-curious/booyah. A state-machine bricks for game logics.",
     "html_url": "https://github.com/GhomKrosmonaute/booyah",
-    "homepage": "https://ghomkrosmonaute.github.io/booyah",
+    "homepage": "https://ghomkrosmonaute.github.io/booyah/",
     "open_issues": 0,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
@@ -96,18 +96,6 @@
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
   {
-    "name": "ts-pixi",
-    "stargazers_count": 1,
-    "forks": 0,
-    "language": "TypeScript",
-    "description": "TS Card Game Boilerplate using PixiJS. Read the readme.md !",
-    "html_url": "https://github.com/GhomKrosmonaute/cards",
-    "homepage": null,
-    "open_issues": 0,
-    "fork": false,
-    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
-  },
-  {
     "name": "color-engine",
     "stargazers_count": 4,
     "forks": 0,
@@ -115,6 +103,18 @@
     "description": "Color engine for creates color gradients from a few colors and converts RBG colors to HEX and vice versa.",
     "html_url": "https://github.com/GhomKrosmonaute/color-engine",
     "homepage": "https://www.npmjs.com/package/color-engine",
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
+    "name": "@ghom/complate",
+    "stargazers_count": 2,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "Comment based templating engine",
+    "html_url": "https://github.com/GhomKrosmonaute/complate",
+    "homepage": null,
     "open_issues": 0,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
@@ -163,7 +163,7 @@
     "description": "An eval command for your Discord bots !",
     "html_url": "https://github.com/GhomKrosmonaute/discord-eval.ts",
     "homepage": "https://www.npmjs.com/package/discord-eval.ts",
-    "open_issues": 0,
+    "open_issues": 1,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
@@ -330,7 +330,7 @@
     "language": "TypeScript",
     "description": "p5.js platformer",
     "html_url": "https://github.com/GhomKrosmonaute/Gario",
-    "homepage": "https://camilleabella.github.io/Gario/dist/",
+    "homepage": "https://ghomkrosmonaute.github.io/Gario/",
     "open_issues": 0,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
@@ -354,6 +354,18 @@
     "language": "JavaScript",
     "description": "Multiplayer chess game using socket.io",
     "html_url": "https://github.com/GhomKrosmonaute/Ghess",
+    "homepage": "",
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
+    "name": "ghom-opendata",
+    "stargazers_count": 1,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "Ghom OpenSource Data",
+    "html_url": "https://github.com/GhomKrosmonaute/ghom-opendata",
     "homepage": "",
     "open_issues": 0,
     "fork": false,
@@ -648,6 +660,18 @@
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
   {
+    "name": "portfolio-v3",
+    "stargazers_count": 1,
+    "forks": 0,
+    "language": "HTML",
+    "description": "lib-less / framework-less personal website",
+    "html_url": "https://github.com/GhomKrosmonaute/portfolio-libless",
+    "homepage": "https://ghomkrosmonaute.github.io/portfolio-libless/",
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
     "name": "ghom-prettify",
     "stargazers_count": 0,
     "forks": 0,
@@ -660,12 +684,36 @@
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
   {
+    "name": "@ghom/programmatic-seo",
+    "stargazers_count": 1,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "This Node.js library is designed to empower developers with the tools needed to automate and enhance their SEO efforts programmatically.",
+    "html_url": "https://github.com/GhomKrosmonaute/programmatic-seo",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
     "name": "pvp",
     "stargazers_count": 1,
     "forks": 0,
     "language": "TypeScript",
     "description": "PVP DIscord bot written in TypeScript (using bot.ts)",
     "html_url": "https://github.com/GhomKrosmonaute/pvp-bot",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
+    "name": "@ghom/react-parallax",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "React rich parallax component with focus effect",
+    "html_url": "https://github.com/GhomKrosmonaute/react-parallax",
     "homepage": null,
     "open_issues": 0,
     "fork": false,
@@ -690,6 +738,18 @@
     "language": "TypeScript",
     "description": "Robotek p5 clone by reverse engeenering",
     "html_url": "https://github.com/GhomKrosmonaute/roll-tactics",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
+  },
+  {
+    "name": "ruel-stroud",
+    "stargazers_count": 1,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "Bot Discord de gestion budgétaire",
+    "html_url": "https://github.com/GhomKrosmonaute/ruel-stroud",
     "homepage": null,
     "open_issues": 0,
     "fork": false,
@@ -805,7 +865,7 @@
   },
   {
     "name": "@ghom/task",
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "forks": 0,
     "language": "TypeScript",
     "description": "Modern task runner for Node.js (gulp like)",
@@ -906,7 +966,7 @@
     "language": "JavaScript",
     "description": "html keyboard typing by ID element",
     "html_url": "https://github.com/GhomKrosmonaute/Typing.js",
-    "homepage": null,
+    "homepage": "https://ghomkrosmonaute.github.io/Typing.js/",
     "open_issues": 0,
     "fork": false,
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
@@ -996,32 +1056,8 @@
     "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
   },
   {
-    "name": "Windows.js",
-    "stargazers_count": 1,
-    "forks": 0,
-    "language": "JavaScript",
-    "description": "JS framework for create movable windows on your website",
-    "html_url": "https://github.com/GhomKrosmonaute/Windows.js",
-    "homepage": "https://ghomkrosmonaute.github.io/Windows.js/",
-    "open_issues": 0,
-    "fork": false,
-    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
-  },
-  {
-    "name": "xPad",
-    "stargazers_count": 1,
-    "forks": 0,
-    "language": "HTML",
-    "description": "🎮 HTML5 Xbox 360 Gamepad Wrapper",
-    "html_url": "https://github.com/GhomKrosmonaute/xPad",
-    "homepage": "https://ghomkrosmonaute.github.io/xPad/",
-    "open_issues": 0,
-    "fork": false,
-    "image": "https://avatars.githubusercontent.com/u/19586013?v=4"
-  },
-  {
     "name": "@ghom/bot.ts",
-    "stargazers_count": 24,
+    "stargazers_count": 26,
     "forks": 3,
     "language": "TypeScript",
     "description": "TypeScript framework in TypeScript includes an advanced command handler, a cli to generate files, a very practical file structure, a yargs based argument system for commands, an advanced Eval command, a Knex based database provider and some utils...",
@@ -1032,7 +1068,7 @@
     "image": "https://avatars.githubusercontent.com/u/108791500?v=4"
   },
   {
-    "name": "make-bot.ts",
+    "name": "@ghom/bot.ts-cli",
     "stargazers_count": 4,
     "forks": 0,
     "language": "JavaScript",
@@ -1056,6 +1092,18 @@
     "image": "https://avatars.githubusercontent.com/u/108791500?v=4"
   },
   {
+    "name": "builder.bot-ts.com",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": "SaaS - Discord bot builder using the bot.ts framework, AI generation and shadcn/ui for the bot's dashboard.",
+    "html_url": "https://github.com/bot-ts/website",
+    "homepage": "https://bot-ts.com",
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/108791500?v=4"
+  },
+  {
     "name": "play-curious-site_11ty",
     "stargazers_count": 1,
     "forks": 0,
@@ -1069,8 +1117,8 @@
   },
   {
     "name": "booyah",
-    "stargazers_count": 12,
-    "forks": 1,
+    "stargazers_count": 14,
+    "forks": 2,
     "language": "TypeScript",
     "description": "HTML5 game engine for mobile & desktop",
     "html_url": "https://github.com/play-curious/booyah",
@@ -1081,8 +1129,8 @@
   },
   {
     "name": "blockchain-battle-1",
-    "stargazers_count": 3,
-    "forks": 2,
+    "stargazers_count": 5,
+    "forks": 3,
     "language": "JavaScript",
     "description": "An HTML5 game about cryptocurrency and the blockchain",
     "html_url": "https://github.com/play-curious/blockchain-battle-game",
@@ -1177,7 +1225,7 @@
   },
   {
     "name": "pixi-art-puzzle",
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "forks": 0,
     "language": "TypeScript",
     "description": "Pong written in Booyah. The results of a 1-hour coding challenge",
@@ -1201,8 +1249,8 @@
   },
   {
     "name": "booyah-pixi",
-    "stargazers_count": 0,
-    "forks": 0,
+    "stargazers_count": 1,
+    "forks": 1,
     "language": "TypeScript",
     "description": "Tools for using PixiJS with the Booyah game engine",
     "html_url": "https://github.com/play-curious/booyah-pixi",
@@ -1242,6 +1290,18 @@
     "language": "TypeScript",
     "description": "Helper library for using Maquette with Booyah",
     "html_url": "https://github.com/play-curious/booyah-maquette",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/63703334?v=4"
+  },
+  {
+    "name": "parcel-transformer-ink",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "JavaScript",
+    "description": "Parcel transformer for ink scripts",
+    "html_url": "https://github.com/play-curious/parcel-transformer-ink",
     "homepage": null,
     "open_issues": 0,
     "fork": false,
@@ -1356,6 +1416,18 @@
     "image": "https://avatars.githubusercontent.com/u/56362993?v=4"
   },
   {
+    "name": "doc-java",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "Kotlin",
+    "description": "Doctor java bot.",
+    "html_url": "https://github.com/Les-Laboratoires/doc-java",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/56362993?v=4"
+  },
+  {
     "name": "p5.ts",
     "stargazers_count": 3,
     "forks": 0,
@@ -1394,7 +1466,7 @@
   {
     "name": "ts-pixi",
     "stargazers_count": 7,
-    "forks": 4,
+    "forks": 5,
     "language": "TypeScript",
     "description": "ESBuild Template for pixi.js and TypeScript",
     "html_url": "https://github.com/ESBuildTemplates/pixi.ts",
@@ -1458,6 +1530,30 @@
     "language": "TypeScript",
     "description": "HTML5 tactical RPG game",
     "html_url": "https://github.com/NoBrainNoGame/realms-of-the-chaos",
+    "homepage": null,
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/144045678?v=4"
+  },
+  {
+    "name": "abseed",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "HTML",
+    "description": "Alphabet randomizer from given seed",
+    "html_url": "https://github.com/NoBrainNoGame/abseed",
+    "homepage": "https://nobrainnogame.github.io/abseed/",
+    "open_issues": 0,
+    "fork": false,
+    "image": "https://avatars.githubusercontent.com/u/144045678?v=4"
+  },
+  {
+    "name": "ghom-game",
+    "stargazers_count": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "description": null,
+    "html_url": "https://github.com/NoBrainNoGame/card-game-core",
     "homepage": null,
     "open_issues": 0,
     "fork": false,
