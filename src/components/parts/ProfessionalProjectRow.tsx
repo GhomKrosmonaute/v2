@@ -29,7 +29,7 @@ export default function ProfessionalProjectRow({
           ))}
         </div>
         <img
-          src={`/professional-projects/${data.image}`}
+          src={`./professional-projects/${data.image}`}
           alt={data.image}
           className="object-cover md:max-w-[min(50vw,50%)] shad0w"
         />
